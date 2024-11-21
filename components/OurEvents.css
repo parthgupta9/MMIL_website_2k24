@@ -1,0 +1,78 @@
+.our-events-container {
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    column-gap: 0px; 
+    row-gap: 0px; 
+    justify-content: center;
+}
+
+.title {
+    color: #fff;
+  font-size: 48px; 
+  text-align: center; 
+  text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
+  margin-bottom: -60px;
+  margin-top: 200px;
+}
+
+.event-card {
+    border-radius: 10px;
+    text-align: center;
+}
+
+.event-image {
+    width: 60%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.circles-left{
+    width: 60%;
+    transform: translate(-250px,-2220px);
+}
+
+.circles-right{
+    width: 60%;
+    transform: translate(-30px,-1650px);
+
+}
+
+.deencode-card {
+    grid-column: 1; 
+    grid-row: 1; 
+    transform: translate(-70px, -140px) scale(0.5);
+}
+
+.hackocode-card {
+    grid-column: 1; 
+    grid-row: 2; 
+    transform: translate(-70px,-680px) scale(0.5);
+}
+
+.logocon-card {
+    grid-column: 2; 
+    grid-row: 1; 
+    transform: translate(-440px,1345px) scale(2.8);
+}
+
+.valorant-card {
+    grid-column: 2; 
+    grid-row: 2; 
+    transform: translate(-440px,40px) scale(2.8);
+}
+
+.line-1 {
+    transform: translate(10%, -2450px) scale(0.8); 
+}
