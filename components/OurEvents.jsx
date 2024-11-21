@@ -32,6 +32,9 @@ export const OurEvents=()=>{
                 <div className="circles-right">
                     <img src="public/Frame 427318248.png" className="circle-right-image"></img>
                 </div>
+                <div className="line-1">
+                    <img src="public/Line 2.png" className="line-1-image"></img>
+                </div>
             </div>
         </div>
     )
