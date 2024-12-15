@@ -34,29 +34,29 @@ export const LoadingScreen = () => {
     });
 
     tl.to(".img", {
-      scale: 1.5,
+      scale: 1.3,
       rotation: 360,
       transformOrigin: "50% 50%",
       duration: 1.5,
     });
 
     tl.to(".img", {
-      scale: 1.6,
+      scale: 1.4,
       duration: 0.3,
       ease: "power1.inOut",
     })
       .to(".img", {
-        scale: 1.5,
+        scale: 1.3,
         duration: 0.3,
         ease: "power1.inOut",
       })
       .to(".img", {
-        scale: 1.6,
+        scale: 1.4,
         duration: 0.3,
         ease: "power1.inOut",
       })
       .to(".img", {
-        scale: 1.5,
+        scale: 1.3,
         duration: 0.3,
         ease: "power1.inOut",
       });
