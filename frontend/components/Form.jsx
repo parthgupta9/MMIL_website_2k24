@@ -311,7 +311,7 @@ const GetInTouch = () => {
       });
   
       try {
-        const response = await fetch('http://localhost:5000/api/submit-form', {
+        const response = await fetch('https://mmil-website-2k24-backend.onrender.com/api/submit-form', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
