@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
@@ -73,6 +73,8 @@ const Mem = styled.img`
   object-fit: cover;
   background-color: white;
   z-index:2;
+  cursor: pointer;
+  transition: all 0.1s ease;
 
   &.top {
     object-position: top;
@@ -89,6 +91,17 @@ const Mem = styled.img`
     left: 20vw;
     box-shadow: 0 0 50px 10px rgba(0,0,0,0.5);
     transform: scale(1.1);
+  }
+
+  &:hover{
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+  }
+  
+  &.flowOut:hover{
+    transform:scale(1.1);
+    box-shadow: 0 0 50px 10px rgba(0,0,0,0.5);
+    cursor: unset;
   }
 `;
 
@@ -129,6 +142,30 @@ const AndLine = styled.img`
 `;
 
 const ViewMoreButton = styled.button`
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  z-index: 3;
+  position: relative;
+  background: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #8a2be2;
+  }
+
+  &:hover .icon {
+    color: #8a2be2;
+  }
+`;
+
+const ViewLessButton = styled.button`
   width: 100%;
   margin: 10px 0;
   padding: 10px;
@@ -208,15 +245,6 @@ const MemYear = styled.p`
   margin-left: 30vw;
 `
 
-const MemAbout = styled.p`
-  color:#EFBDEB;
-  font-size: 2.5vh;
-  font-weight: bold;
-  margin-left: 30vw;
-  padding: 0 30px;
-  margin-top: 50px;
-`
-
 const CloseBtn = styled(FontAwesomeIcon)`
   color: white;
   font-size: 20px;
@@ -230,7 +258,7 @@ const CloseBtn = styled(FontAwesomeIcon)`
   }
 `
 
-const ConnectionBox=styled.div`
+const ConnectionBox = styled.div`
   display:flex;
   justify-content:space-around;
   width: 10vw;
@@ -679,7 +707,7 @@ function Team() {
               onClick={() => handleToggle(setShowMoreDesign)}
               className="viewMore"
             >
-              View more &nbsp;
+              View More &nbsp;
               <StyledFontAwesomeIcon icon={faCaretDown} className="icon" />
             </ViewMoreButton>
           )}
@@ -688,6 +716,13 @@ function Team() {
               <Mem src="/sanya.jpg" id="sanyaPandey" onClick={(e) => { toggleMemInfo(e) }} />
               <Mem src="/male.jpg" id="abhishekKushwaha" onClick={(e) => { toggleMemInfo(e) }} />
               <Mem src="/female.jpg" id="shubhiGupta" onClick={(e) => { toggleMemInfo(e) }} />
+              <ViewLessButton
+                onClick={() => handleToggle(setShowMoreDesign)}
+                className="viewLess"
+              >
+                View Less &nbsp;
+                <StyledFontAwesomeIcon icon={faCaretUp} className="icon" />
+              </ViewLessButton>
             </>
           )}
         </TeamBox>
@@ -719,6 +754,13 @@ function Team() {
               <Mem src="/female.jpg" id="vaishnaviBhati" onClick={(e) => { toggleMemInfo(e) }} /> {/* Vaishnavi Bhati */}
               <Mem src="/male.jpg" onClick={(e) => { toggleMemInfo(e) }} id="utkarshGupta" /> {/* Utkarsh Gupta */}
               <Mem src="/male.jpg" onClick={(e) => { toggleMemInfo(e) }} id="tanmayKalra" /> {/* Tanmay Kalra */}
+              <ViewLessButton
+                onClick={() => handleToggle(setShowMoreProgramming)}
+                className="viewLess"
+              >
+                View Less &nbsp;
+                <StyledFontAwesomeIcon icon={faCaretUp} className="icon" />
+              </ViewLessButton>
             </>
           )}
         </TeamBox>
@@ -749,6 +791,13 @@ function Team() {
               <Mem src="/parthc.jpg" id="parthChaturvedi" className="top" onClick={(e) => { toggleMemInfo(e) }} />
               <Mem src="/female.jpg" id="harshitaSharma" onClick={(e) => { toggleMemInfo(e) }} />
               <Mem src="/female.jpg" id="dishaAggarwal" onClick={(e) => { toggleMemInfo(e) }} />
+              <ViewLessButton
+                onClick={() => handleToggle(setShowMoreWeb)}
+                className="viewLess"
+              >
+                View Less &nbsp;
+                <StyledFontAwesomeIcon icon={faCaretUp} className="icon" />
+              </ViewLessButton>
             </>
           )}
         </TeamBox>
@@ -775,6 +824,13 @@ function Team() {
               <Mem src="/IMG_20241126_164315.jpg" id="rounakAli" onClick={(e) => { toggleMemInfo(e) }} />
               <Mem src="/Ashita.jpg" id="ashitaMaheshwari" onClick={(e) => { toggleMemInfo(e) }} />
               <Mem src="/ayan.jpg" id="ayanKhan" onClick={(e) => { toggleMemInfo(e) }} />
+              <ViewLessButton
+                onClick={() => handleToggle(setShowMoreAndroid)}
+                className="viewLess"
+              >
+                View Less &nbsp;
+                <StyledFontAwesomeIcon icon={faCaretUp} className="icon" />
+              </ViewLessButton>
             </>
           )}
         </TeamBox>
