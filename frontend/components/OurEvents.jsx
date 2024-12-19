@@ -200,27 +200,27 @@ export const OurEvents = () => {
       <EventGrid>
         <EventCard variant="deencode" className="deencode">
           <a href="https://www.youtube.com" className="event-link">
-            <EventImage src="public/Frame 427318180.png" />
+            <EventImage src="/Frame 427318180.png" />
           </a>
         </EventCard>
         <EventCard variant="logocon" className="logocon">
           <a href="https://www.youtube.com" className="event-link">
-            <EventImage src="public/logocon post 1.png" />
+            <EventImage src="/logocon post 1.png" />
           </a>
         </EventCard>
         <EventCard variant="hackocode" className="hackocode">
           <a href="https://www.youtube.com" className="event-link">
-            <EventImage src="public/final pls 1.png" />
+            <EventImage src="/final pls 1.png" />
           </a>
         </EventCard>
         <EventCard variant="valorant" className="valorant">
           <a href="https://www.youtube.com" className="event-link">
-            <EventImage src="public/Valorent flex 1.png" />
+            <EventImage src="/Valorent flex 1.png" />
           </a>
         </EventCard>
         <CirclesRight className="circlesRight">
           <img
-            src="public/Frame 427318248.png"
+            src="/Frame 427318248.png"
             className="circle-right-image"
           />
         </CirclesRight>
