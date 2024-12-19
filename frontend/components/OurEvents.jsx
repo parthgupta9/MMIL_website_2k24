@@ -3,6 +3,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import React from "react";
 import styled from "styled-components";
+import Hr from "../src/assets/hr5.svg";
+import ellipse from "../src/assets/Ellipse 60.svg";
+import hr5icon from "../src/assets/hr5icon.svg";
 
 const OurEventsContainer = styled.section`
   position: relative;
@@ -93,6 +96,16 @@ const CirclesRight = styled.div`
   top: 50%;
 `;
 
+const HRandIcons = styled.div`
+  display: flex;
+  position: absolute;
+  right: 0;
+
+  & > img:nth-child(3) {
+    position: absolute;
+    right: 0;
+  }
+`;
 export const OurEvents = () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -108,46 +121,81 @@ export const OurEvents = () => {
       },
     });
 
-    tl.from(".circlesLeft", {
-      opacity: 0,
-      x: -20,
-      scale: 0.5,
-      rotation: -60,
-      ease: "power2.Out",
-    }),
-
-    tl.from(".deencode", {
-      opacity: 0,
-      y: -200,
-      ease: "power2.inOut",
-    }, "anim"),
-    tl.from(".logocon", {
-      opacity: 0,
-      x: 200,
-      ease: "power2.inOut",
-      }, "anim"),
-    tl.from(".hackocode", {
-      opacity: 0,
-      x: -200,
-      ease: "power2.inOut",
-    }, "anim"),
-    tl.from(".valorant", {
-      opacity: 0,
-      y: 200,
-      ease: "power2.inOut",
-    }, "anim"),
-
-    tl.from(".circlesRight",{
-      opacity: 0,
-      x: 20,
-      scale: 0.5,
-      rotation: 60,
-      ease: "power2.Out",
-    })
-
+    tl.from(
+      ".circlesLeft",
+      {
+        opacity: 0,
+        x: -20,
+        scale: 0.5,
+        rotation: -60,
+        ease: "power2.Out",
+      },
+      "abc"
+    ),
+      tl.from(
+        ".hrIcons",
+        {
+          x: 50,
+          clipPath: "inset(0 0 0 100%)",
+          ease: "power2.out",
+          duration: 1.5,
+        },
+        "abc"
+      );
+    tl.from(
+      ".deencode",
+      {
+        opacity: 0,
+        y: -200,
+        ease: "power2.inOut",
+      },
+      "anim"
+    ),
+      tl.from(
+        ".logocon",
+        {
+          opacity: 0,
+          x: 200,
+          ease: "power2.inOut",
+        },
+        "anim"
+      ),
+      tl.from(
+        ".hackocode",
+        {
+          opacity: 0,
+          x: -200,
+          ease: "power2.inOut",
+        },
+        "anim"
+      ),
+      tl.from(
+        ".valorant",
+        {
+          opacity: 0,
+          y: 200,
+          ease: "power2.inOut",
+        },
+        "anim"
+      ),
+      tl.from(".circlesRight", {
+        opacity: 0,
+        x: 20,
+        scale: 0.5,
+        rotation: 60,
+        ease: "power2.Out",
+      });
   });
   return (
     <OurEventsContainer className="events-container">
+      <CirclesLeft className="circlesLeft">
+        <img src="public/Frame 427318247.png" className="circle-left-image" />
+      </CirclesLeft>
+      <HRandIcons className="hrIcons">
+        <img src={Hr} alt="" />
+        <img src={ellipse} alt="" />
+        <img src={hr5icon} alt="" />
+      </HRandIcons>
       <Title>Our Events</Title>
       <EventGrid>
         <EventCard variant="deencode" className="deencode">
@@ -170,9 +218,6 @@ export const OurEvents = () => {
             <EventImage src="public/Valorent flex 1.png" />
           </a>
         </EventCard>
-        <CirclesLeft className="circlesLeft">
-          <img src="public/Frame 427318247.png" className="circle-left-image" />
-        </CirclesLeft>
         <CirclesRight className="circlesRight">
           <img
             src="public/Frame 427318248.png"
