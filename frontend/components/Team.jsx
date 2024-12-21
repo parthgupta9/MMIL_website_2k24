@@ -783,6 +783,17 @@ function Team() {
           )}
           {showMoreWeb && (
             <>
+
+              <Mem src="/photo.jpg" />
+              <Mem src="/IMG_20240526_193046.jpg" />
+              <Mem src="/IMG_20241123_154657.jpg" className="top" />
+              <Mem src="/Muskan.jpg" />
+              <Mem src="/Disha.jpeg"  className="top"/>
+
+              <Mem src="/garima.jpeg" />
+              <Mem src="/parthc.jpg"  />
+              <Mem src="/female.jpg" />
+              <Mem src="/female.jpg" />
               <Mem src="/photo.jpg" id="bhoomiAgarwal" onClick={(e) => { toggleMemInfo(e) }} />
               <Mem src="/IMG_20240526_193046.jpg" id="parthGupta" onClick={(e) => { toggleMemInfo(e) }} />
               <Mem src="/IMG_20241123_154657.jpg" id="utkarshSharma" className="top" onClick={(e) => { toggleMemInfo(e) }} />
@@ -798,6 +809,7 @@ function Team() {
                 View Less &nbsp;
                 <StyledFontAwesomeIcon icon={faCaretUp} className="icon" />
               </ViewLessButton>
+
             </>
           )}
         </TeamBox>

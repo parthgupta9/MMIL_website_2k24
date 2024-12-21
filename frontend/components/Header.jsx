@@ -5,22 +5,59 @@ import mmilLogo from "../src/assets/mmilLogo.svg";
 const Logo = styled.div`
   display: inline-block;
   position: absolute;
-  left: 4.5vh;
+  left: 2vh;
   top: 2vh;
+  z-index: 10000;
+
+  img {
+    width: 100px; /* Default size */
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    left: 2vh;
+    top: 1vh; /* Adjust top for better positioning on smaller screens */
+    img {
+      width: 90px; /* Smaller logo for tablet */
+    }
+  }
+
+  @media (max-width: 480px) {
+    left: 2vh;
+    top: 1vh;
+    img {
+      width: 80px; /* Even smaller logo for mobile */
+    }
+  }
 `;
 
 const HeaderContainer = styled.header`
   display: flex;
+  flex-direction: column; /* Stack items vertically */
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: absolute;
   padding: 6px 10vh;
   border: 1px solid rgba(239, 236, 253, 1);
   width: 60%;
-  top: 10vh;
+  top: 12vh; /* Push it down to make space for the logo */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+
+  /* For tablets */
+  @media (max-width: 768px) {
+    width: 80%;
+    padding: 6px 5vh;
+    top: 15vh; /* Push the nav further down on tablet */
+  }
+
+  /* For mobile */
+  @media (max-width: 480px) {
+    width: 90%;
+    padding: 6px 3vh;
+    top: 15vh; /* Adjust for mobile, move it further down */
+  }
 `;
 
 const Nav = styled.nav`
@@ -29,6 +66,19 @@ const Nav = styled.nav`
   align-items: center;
   gap: 10vh;
   width: 100%;
+
+  /* For tablets */
+  @media (max-width: 768px) {
+    gap: 5vh; /* Decrease gap on tablets */
+  }
+
+  /* For mobile */
+  @media (max-width: 480px) {
+    flex-direction: column; /* Stack nav items vertically on mobile */
+    gap: 2vh; /* Reduce gap for mobile */
+    width: 100%;
+    align-items: flex-start;
+  }
 `;
 
 const NavItem = styled.a`
@@ -36,6 +86,16 @@ const NavItem = styled.a`
   text-decoration: none;
   font-size: 1.625rem;
   cursor: pointer;
+
+  /* For tablets */
+  @media (max-width: 768px) {
+    font-size: 1.375rem; /* Reduce font size on tablets */
+  }
+
+  /* For mobile */
+  @media (max-width: 480px) {
+    font-size: 1.125rem; /* Further reduce font size on mobile */
+  }
 `;
 
 export const Header = () => {
@@ -61,7 +121,7 @@ export const Header = () => {
           {navItems.map((item, index) => (
             <NavItem
               key={index}
-              onClick={() => handleScrollToSection(item.toLowerCase())} 
+              onClick={() => handleScrollToSection(item.toLowerCase())}
             >
               {item}
             </NavItem>
