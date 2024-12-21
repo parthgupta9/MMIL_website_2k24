@@ -140,6 +140,21 @@ const ProjectCard = styled.div`
         right: -10px;
         transform: rotate(90deg);
       }
+}}
+      @media (max-width: 768px) {
+  
+  
+    width: 20vw; /* Reduce card width */
+    height: 45vh; /* Reduce card height */
+    flex: 0 0 45%; /* Adjust flex behavior */
+  
+  }
+    @media (max-width: 480px) {
+    width: 90%; /* Use most of the screen width */
+    height: auto; /* Allow height to adjust dynamically */
+    padding: 1rem; /* Adjust padding */
+    img.svg-img {
+      display: none; /* Hide SVGs on phones */
     }
   }
 `;
@@ -156,12 +171,33 @@ const TextContent = styled.div`
 const ProjectTitle = styled.h2`
   font-size: 3rem;
   margin-bottom: 1rem;
+  @media (max-width: 768px) {
+  
+
+  
+  
+    font-size: 2rem;
+}
+    @media (max-width: 480px) {
+
+    font-size: 1.5rem;
+  }
+
 `;
 
 const ProjectDescription = styled.p`
   font-size: 1rem;
   line-height: 1.4;
   margin-bottom: 1rem;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+    @media (max-width: 480px) {
+
+    font-size: 0.8rem;
+    margin-bottom:1.5rem;
+  }
+
 `;
 
 const ExploreButton = styled.button`
@@ -205,7 +241,17 @@ const ExploreButton = styled.button`
   &:active {
     scale: 1;
   }
+    @media (max-width: 768px) {
+    font-size: 16px;
+    margin-top:8px;
+  }
+    @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 8px 20px;
+    margin-top:8px; /* Adjust button padding */
+  }
 `;
+
 
 export const FeaturedProjects = () => {
   useGSAP(() => {
@@ -285,8 +331,7 @@ export const FeaturedProjects = () => {
                 <ProjectTitle>Project 4</ProjectTitle>
                 <ProjectDescription>
                   <p>
-                    Explore our AI/ML innovations, delivering cutting-edge
-                    models and intelligent solutions that redefine technology
+                    Explore our AI/ML innovations and intelligent solutions that redefine technology
                     through automation and data-driven insights
                   </p>
                 </ProjectDescription>

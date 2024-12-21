@@ -344,8 +344,10 @@ function Team() {
               <Mem src="/IMG_20240526_193046.jpg" />
               <Mem src="/IMG_20241123_154657.jpg" className="top" />
               <Mem src="/Muskan.jpg" />
+              <Mem src="/Disha.jpeg"  className="top"/>
+
               <Mem src="/garima.jpeg" />
-              <Mem src="/parthc.jpg" className="top" />
+              <Mem src="/parthc.jpg"  />
               <Mem src="/female.jpg" />
               <Mem src="/female.jpg" />
             </>
