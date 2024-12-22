@@ -5,7 +5,8 @@ import hand from "../src/assets/hand.svg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Section = styled.div``;
 
 const GetInTouchContainer = styled.section`
@@ -302,14 +303,14 @@ const GetInTouch = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (validateForm()) {
       console.log({
         email,
         phone,
         message,
       });
-  
+
       try {
         const response = await fetch('https://mmil-website-2k24-backend.onrender.com/api/submit-form', {
           method: 'POST',
@@ -322,23 +323,24 @@ const GetInTouch = () => {
             message,
           }),
         });
-  
+
         if (response.ok) {
-          alert('Message sent successfully!');
+          toast.success("Message sent successfully!"); 
           clearEmail();
           clearPhone();
           clearMessage();
         } else {
-          alert('Failed to send message.');
+          toast.error("Failed to send message."); 
         }
       } catch (error) {
         console.error('Error sending message:', error);
-        alert('Failed to send message.');
+        toast.error("Failed to send message."); 
       }
     } else {
       console.log("Form has errors");
     }
   };
+
   
   
 
@@ -416,6 +418,7 @@ const GetInTouch = () => {
         <HandImage className="hand" src={hand} alt="hand" />
       </GetInTouchContainer>
       <BottomBorder />
+      <ToastContainer/>
     </Section>
   );
 };

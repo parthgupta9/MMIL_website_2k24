@@ -16,9 +16,9 @@ const Logo = styled.div`
 
   @media (max-width: 768px) {
     left: 2vh;
-    top: 1vh; /* Adjust top for better positioning on smaller screens */
+    top: 1vh; 
     img {
-      width: 90px; /* Smaller logo for tablet */
+      width: 90px; 
     }
   }
 
@@ -26,21 +26,21 @@ const Logo = styled.div`
     left: 2vh;
     top: 1vh;
     img {
-      width: 80px; /* Even smaller logo for mobile */
+      width: 80px; 
     }
   }
 `;
 
 const HeaderContainer = styled.header`
   display: flex;
-  flex-direction: column; /* Stack items vertically */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: absolute;
   padding: 6px 10vh;
   border: 1px solid rgba(239, 236, 253, 1);
   width: 60%;
-  top: 12vh; /* Push it down to make space for the logo */
+  top: 12vh; 
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
@@ -49,7 +49,7 @@ const HeaderContainer = styled.header`
   @media (max-width: 768px) {
     width: 80%;
     padding: 6px 5vh;
-    top: 15vh; /* Push the nav further down on tablet */
+    top: 15vh; 
   }
 
   /* For mobile */
