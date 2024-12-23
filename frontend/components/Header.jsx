@@ -56,7 +56,7 @@ const HeaderContainer = styled.header`
   @media (max-width: 480px) {
     width: 90%;
     padding: 6px 3vh;
-    top: 15vh; /* Adjust for mobile, move it further down */
+    top: 20vh; /* Adjust for mobile, move it further down */
   }
 `;
 
