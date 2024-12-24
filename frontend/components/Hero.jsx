@@ -21,65 +21,55 @@ const SphereContainer = styled.div`
   align-items: center;
   img:nth-child(1) {
     position: absolute;
-    top: 51vh;
+    top: 31vh;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100vh;
     z-index: 10;
-    width:68%;
   }
 
   img:nth-child(2) {
     position: absolute;
-    top: 71vh;
+    top: 51vh;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100vh;
     z-index: 9;
-    width:68%;
   }
 
   img:nth-child(3) {
     position: absolute;
-    top: 91vh;
+    top: 71vh;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100vh;
     z-index: 8;
-    width:68%;
   }
-     @media (max-width: 430px) {
-    
-    
-    /* Reduce the size of the images */
+
+  @media (max-width: 430px) {
     img:nth-child(1),
     img:nth-child(2),
     img:nth-child(3) {
-    position:absolute;
-   width: 100%; /* Scale images to full width */
-      height: 90vh; /* Set height to 90% of the viewport height */
-       /* Set position */
+      position: absolute;
+      width: 100%;
+      height: 90vh;
       left: 50%;
       transform: translate(-50%, -50%);
     }
-        img:nth-child(1) {
-      top: 70vh; /* Adjust position for smaller screens */
-      
+    img:nth-child(1) {
+      top: 44vh;
     }
 
     img:nth-child(2) {
-      top: 85vh; /* Adjust position for smaller screens */
-
+      top: 65vh;
     }
 
     img:nth-child(3) {
-      top: 100vh; /* Adjust position for smaller screens */
-      
-}}
-
-    
+      top: 80vh;
+    }
+  }
 `;
 
-
-
-// Text container with centralized position
 const Text = styled.div`
   text-align: center;
   color: white;
@@ -89,33 +79,30 @@ const Text = styled.div`
   transform: translate(-50%, -50%);
   z-index: 20;
 
-  /* Media Query for small screens */
   @media (max-width: 430px) {
-    top: 50%;  /* Adjust vertical position */
-    width: 90%; /* Ensure content is inside the screen width */
+    top: 37%;
+    width: 90%;
   }
-    /* Media Query for tablet screens */
+
   @media (min-width: 600px) and (max-width: 1024px) {
-    top: 45%;  /* Adjust vertical position for tablet */
-    width: 80%; /* Adjust width for tablets */
+    top: 45%;
+    width: 80%;
   }
 `;
 
-// Greeting text (h1)
 const Greeting = styled.h1`
   font-size: 3.5rem;
   margin: 0;
   font-weight: 500;
 
-  /* Media Query for small screens */
   @media (max-width: 430px) {
-    font-size: 2rem;
-    margin-top:20vh; /* Smaller font size for mobile */
+    font-size: 4rem;
+    margin-top: 20vh;
   }
-    /* Media Query for tablet screens */
+ 
   @media (min-width: 600px) and (max-width: 1024px) {
-    font-size: 2.5rem; /* Reduce font size for tablet */
-    margin-top: 15vh;  /* Adjust margin for tablet */
+    font-size: 4.5rem;
+    margin-top: 15vh;
   }
 `;
 
@@ -124,32 +111,30 @@ const SubText = styled.p`
   font-size: 4rem;
   margin: 5px 0;
 
-  /* Media Query for small screens */
   @media (max-width: 430px) {
-    font-size: 1.5rem; /* Smaller font size for mobile */
+    font-size: 4.5rem;
   }
-    /* Media Query for tablet screens */
+  
   @media (min-width: 600px) and (max-width: 1024px) {
-    font-size: 2rem;  /* Adjust font size for tablet */
-    margin-top: 2vh;  /* Adjust margin for tablet */
+    font-size: 4.5rem;
+    margin-top: 2vh;
   }
 `;
 
-// Title (h2 element)
 const Title = styled.h2`
   font-family: "Lato", serif;
   font-size: 8.75rem;
   font-weight: 900;
   margin: 10px 0;
 
-  /* Media Query for small screens */
   @media (max-width: 430px) {
-    font-size: 3rem; /* Smaller font size for mobile */
-  }/* Media Query for tablet screens */
+    font-size: 6rem;
+  }
+
   @media (min-width: 600px) and (max-width: 1024px) {
-    font-size: 5rem; /* Smaller font size for tablet */
-    font-weight: 800; /* Reduce font weight for tablet */
-    margin-top: 3vh; /* Adjust margin for tablet */
+    font-size: 7rem;
+    font-weight: 800;
+    margin-top: 3vh;
   }
 `;
 
@@ -160,18 +145,16 @@ const Motto = styled.div`
   gap: 10vh;
   margin-top: 40px;
 
-  /* Media Query for small screens */
   @media (max-width: 430px) {
-    flex-direction: column; /* Stack motto texts vertically */
-    gap: 5vh; /* Reduce the gap for mobile */
-  } /* Media Query for tablet screens */
+    flex-direction: column;
+    gap: 5vh;
+  }
   @media (min-width: 600px) and (max-width: 1024px) {
-    gap: 5vw; /* Reduce gap for tablets */
-    flex-direction: row; /* Keep motto texts in a row for tablets */
+    gap: 5vw;
+    flex-direction: row;
   }
 `;
 
-// Motto Text (span element)
 const MottoText = styled.span`
   transform: translateY(-10px);
   font-size: 2.25rem;
@@ -185,18 +168,16 @@ const MottoText = styled.span`
     text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff;
   }
 
-  /* Media Query for small screens */
   @media (max-width: 430px) {
-    font-size: 1.5rem; /* Smaller font size for mobile */
-    transform: translateY(0); /* Adjust the vertical position for mobile */
+    font-size: 2.5rem;
+    transform: translateY(0);
   }
-    /* Media Query for tablet screens */
+ 
   @media (min-width: 600px) and (max-width: 1024px) {
-    font-size: 1.75rem; /* Adjust font size for tablets */
-    transform: translateY(0); /* Remove translate for tablet */
+    font-size: 2.75rem;
+    transform: translateY(0);
   }
 `;
-
 
 export const Hero = () => {
   useGSAP(() => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import mmilLogo from "../src/assets/mmilLogo.svg";
 
@@ -16,9 +16,9 @@ const Logo = styled.div`
 
   @media (max-width: 768px) {
     left: 2vh;
-    top: 1vh; 
+    top: 1vh;
     img {
-      width: 90px; 
+      width: 90px;
     }
   }
 
@@ -26,7 +26,7 @@ const Logo = styled.div`
     left: 2vh;
     top: 1vh;
     img {
-      width: 80px; 
+      width: 80px;
     }
   }
 `;
@@ -40,23 +40,23 @@ const HeaderContainer = styled.header`
   padding: 6px 10vh;
   border: 1px solid rgba(239, 236, 253, 1);
   width: 60%;
-  top: 12vh; 
+  top: 12vh;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
 
-  /* For tablets */
   @media (max-width: 768px) {
+    border: none;
     width: 80%;
     padding: 6px 5vh;
-    top: 15vh; 
+    top: 7vh;
   }
 
-  /* For mobile */
   @media (max-width: 480px) {
+    border: none;
     width: 90%;
     padding: 6px 3vh;
-    top: 20vh; /* Adjust for mobile, move it further down */
+    top: 7vh;
   }
 `;
 
@@ -67,17 +67,21 @@ const Nav = styled.nav`
   gap: 10vh;
   width: 100%;
 
-  /* For tablets */
   @media (max-width: 768px) {
-    gap: 5vh; /* Decrease gap on tablets */
-  }
-
-  /* For mobile */
-  @media (max-width: 480px) {
-    flex-direction: column; /* Stack nav items vertically on mobile */
-    gap: 2vh; /* Reduce gap for mobile */
-    width: 100%;
+    display: ${({ isMenuOpen }) => (isMenuOpen ? "flex" : "none")};
+    flex-direction: column;
+    gap: 3vh;
     align-items: flex-start;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Soft border for glass effect */
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 `;
 
@@ -86,19 +90,47 @@ const NavItem = styled.a`
   text-decoration: none;
   font-size: 1.625rem;
   cursor: pointer;
+  transition: text-shadow 0.3s ease-in-out;
 
-  /* For tablets */
-  @media (max-width: 768px) {
-    font-size: 1.375rem; /* Reduce font size on tablets */
+  &:hover {
+    text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
   }
 
-  /* For mobile */
+  @media (max-width: 768px) {
+    font-size: 1.375rem;
+    text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
+  }
+
   @media (max-width: 480px) {
-    font-size: 1.125rem; /* Further reduce font size on mobile */
+    font-size: 1.125rem;
+    text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
+  }
+`;
+
+const BurgerMenu = styled.div`
+  display: none;
+  cursor: pointer;
+  z-index: 10001;
+
+  div {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
   }
 `;
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const navItems = ["About", "Team", "Projects", "Contacts"];
 
   const handleScrollToSection = (section) => {
@@ -109,6 +141,7 @@ export const Header = () => {
         block: "start",
       });
     }
+    setIsMenuOpen(false); // Close the menu after selecting an item
   };
 
   return (
@@ -116,8 +149,13 @@ export const Header = () => {
       <Logo>
         <img src={mmilLogo} alt="Logo" />
       </Logo>
+      <BurgerMenu onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </BurgerMenu>
       <HeaderContainer>
-        <Nav>
+        <Nav isMenuOpen={isMenuOpen}>
           {navItems.map((item, index) => (
             <NavItem
               key={index}
