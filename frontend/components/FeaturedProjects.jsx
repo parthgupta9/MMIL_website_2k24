@@ -13,7 +13,7 @@ const Container = styled.div`
   padding: 2rem 0;
   // overflow-x: hidden;
   color: white;
-  height: 140vh;
+  height: 110vh;
   margin-bottom: 5vh;
 
   @media screen and (max-width: 767px) {
@@ -25,7 +25,7 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 8vh;
   text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 `;
 
 const Banner = styled.div`
@@ -49,10 +49,10 @@ const ProjectWrapper = styled.div`
 
   @keyframes autoRun {
     from {
-      transform: perspective(2000px) rotateX(-16deg) rotateY(0deg);
+      transform: perspective(2000px) rotateY(0deg);
     }
     to {
-      transform: perspective(2000px) rotateX(-16deg) rotateY(360deg);
+      transform: perspective(2000px) rotateY(360deg);
     }
   }
 
