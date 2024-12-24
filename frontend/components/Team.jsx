@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import _ScrollTrigger from "gsap/ScrollTrigger";
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,7 +72,7 @@ const Mem = styled.img`
   margin: 20px 70px;
   object-fit: cover;
   background-color: white;
-  z-index:2;
+  z-index: 2;
   cursor: pointer;
   transition: all 0.1s ease;
 
@@ -84,23 +84,23 @@ const Mem = styled.img`
     object-position: bottom;
   }
 
-  &.flowOut{
+  &.flowOut {
     z-index: 11;
     position: fixed;
-    top:30vh;
+    top: 30vh;
     left: 20vw;
-    box-shadow: 0 0 50px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
   }
 
-  &:hover{
+  &:hover {
     transform: scale(1.08);
     box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
   }
-  
-  &.flowOut:hover{
-    transform:scale(1.1);
-    box-shadow: 0 0 50px 10px rgba(0,0,0,0.5);
+
+  &.flowOut:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.5);
     cursor: unset;
   }
 `;
@@ -194,28 +194,32 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 `;
 
 const Blur = styled.div`
-  width:80vw;
-  height:80vh;
-  position:fixed;
-  top:50%;
+  width: 80vw;
+  height: 80vh;
+  position: fixed;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index:-10;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  z-index: -10;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  border:1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  flex-direction:column;
+  flex-direction: column;
 
   &.active {
-    z-index:10;
+    z-index: 10;
   }
-`
+`;
 
 const MemName = styled.h2`
   color: white;
@@ -224,8 +228,8 @@ const MemName = styled.h2`
   font-size: 8vh;
   font-weight: bold;
   margin-left: 30vw;
-  padding:0 20px;
-`
+  padding: 0 20px;
+`;
 
 const MemPost = styled.p`
   color: white;
@@ -234,7 +238,7 @@ const MemPost = styled.p`
   font-size: 4vh;
   font-weight: bold;
   margin-left: 30vw;
-`
+`;
 
 const MemYear = styled.p`
   color: white;
@@ -243,7 +247,7 @@ const MemYear = styled.p`
   font-size: 4vh;
   font-weight: bold;
   margin-left: 30vw;
-`
+`;
 
 const CloseBtn = styled(FontAwesomeIcon)`
   color: white;
@@ -256,32 +260,32 @@ const CloseBtn = styled(FontAwesomeIcon)`
   &:hover {
     transform: scale(1.1);
   }
-`
+`;
 
 const ConnectionBox = styled.div`
-  display:flex;
-  justify-content:space-around;
+  display: flex;
+  justify-content: space-around;
   width: 10vw;
   margin-top: 10vh;
   margin-left: 10vw;
-`
+`;
 
 const GitHub = styled.img`
   border-radius: 10px;
   transition: all 0.1s ease;
-  &:hover{
-    transform:scale(1.1)
+  &:hover {
+    transform: scale(1.1);
   }
-`
+`;
 
 const LinkedIn = styled.img`
   border-radius: 10px;
   margin-left: 100px;
   transition: all 0.1s ease;
-  &:hover{
-    transform:scale(1.1)
+  &:hover {
+    transform: scale(1.1);
   }
-`
+`;
 
 function Team() {
   const [showMoreDesign, setShowMoreDesign] = useState(false);
@@ -295,275 +299,309 @@ function Team() {
       name: "Parth Sharma",
       year: "4th Year",
       post: "Design Head",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     harshJajaniya: {
       name: "Harsh Jajaniya",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     anushkaDubey: {
       name: "Anushka Dubey",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     sanyaPandey: {
       name: "Sanya Pandey",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     shubhiGupta: {
       name: "Shubhi Gupta",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     abhishekKushwaha: {
       name: "Abhishek Kushwaha",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     pranavSingh: {
       name: "Pranav Singh",
       year: "4th Year",
       post: "Programming Head",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     manasRai: {
       name: "Manas Rai",
       year: "4th Year",
       post: "President",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     aryanGupta: {
       name: "Aryan Gupta",
       year: "4th Year",
       post: "Treasurer",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     anushaAgarwal: {
       name: "Anusha Agarwal",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     abhinavYadav: {
       name: "Abhinav Yadav",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     abhishekYadav: {
       name: "Abhishek Yadav",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     vaishnavGupta: {
       name: "Vaishnav Gupta",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     vaishnaviBhati: {
       name: "Vaishnavi Bhati",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     utkarshGupta: {
       name: "Utkarsh Gupta",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     tanmayKalra: {
       name: "Tanmay Kalra",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     dhanrajSingh: {
       name: "Dhanraj Singh",
       year: "4th Year",
       post: "Web Head",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     nipunKhatri: {
       name: "Nipun Khatri",
       year: "4th Year",
       post: "General Secretary",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     kuldeepPandit: {
       name: "Kuldeep Pandit",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     bhoomiAgarwal: {
       name: "Bhoomi Agarwal",
       year: "4th Year",
       post: "Vice President",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     parthGupta: {
       name: "Parth Gupta",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     utkarshSharma: {
       name: "Utkarsh Sharma",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     muskanJaiswal: {
       name: "Muskan Jaiswal",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     garimaSingh: {
       name: "Garima Singh",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     parthChaturvedi: {
       name: "Parth Chaturvedi",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     harshitaSharma: {
       name: "Harshita Sharma",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     dishaAggarwal: {
       name: "Disha Aggarwal",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     vibhutiKapoor: {
       name: "Vibhuti Kapoor",
       year: "4th Year",
       post: "Android Head",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     yashShekhar: {
       name: "Yash Shekhar",
       year: "4th Year",
       post: "CTC",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     shrangikaGupta: {
       name: "Shrangika Gupta",
       year: "4th Year",
       post: "Technical Head",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     harshitGoyal: {
       name: "Harshit Goyal",
       year: "4th Year",
       post: "Management Head",
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     rounakAli: {
       name: "Rounak Ali Ansari",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     ashitaMaheshwari: {
       name: "Ashita Maheshwari",
       year: "3rd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
     ayanKhan: {
       name: "Ayan Khan",
       year: "2nd Year",
       post: null,
-      about: "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
+      about:
+        "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
       linkedin: "https://linkedin.com",
-      github: "https://github.com"
+      github: "https://github.com",
     },
-  }
+  };
 
   const handleToggle = (setter) => {
     setter((prev) => !prev);
@@ -573,14 +611,14 @@ function Team() {
   };
 
   const toggleMemInfo = (e) => {
-    setSelectedImage(e.target)
-    e.target.classList.add("flowOut")
-  }
+    setSelectedImage(e.target);
+    e.target.classList.add("flowOut");
+  };
 
   const handleClose = () => {
-    selectedImage.classList.remove("flowOut")
+    selectedImage.classList.remove("flowOut");
     setSelectedImage(null);
-  }
+  };
 
   gsap.registerPlugin(_ScrollTrigger);
 
@@ -684,7 +722,7 @@ function Team() {
   return (
     <Section id="team">
       <Container className="team-container">
-        <Blur className={`blurBackground ${selectedImage ? 'active' : ''}`}>
+        <Blur className={`blurBackground ${selectedImage ? "active" : ""}`}>
           <CloseBtn icon={faXmark} onClick={() => handleClose()} />
           <MemName>{selectedImage && MMILians[selectedImage.id].name}</MemName>
           <MemPost>{selectedImage && MMILians[selectedImage.id].post}</MemPost>
@@ -699,9 +737,27 @@ function Team() {
         <Cube className="cube" src="/Group 3673.svg" />
         <SubTitle>Design |</SubTitle>
         <TeamBox>
-          <Mem src="/IMG_20240627_115713.jpg" id="parthSharma" onClick={(e) => { toggleMemInfo(e) }} />
-          <Mem src="/harshsir.png" id="harshJajaniya" onClick={(e) => { toggleMemInfo(e) }} />
-          <Mem src="/Anushka.jpg" id="anushkaDubey" onClick={(e) => { toggleMemInfo(e) }} />
+          <Mem
+            src="/IMG_20240627_115713.jpg"
+            id="parthSharma"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
+          <Mem
+            src="/harshsir.png"
+            id="harshJajaniya"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
+          <Mem
+            src="/Anushka.jpg"
+            id="anushkaDubey"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
           {!showMoreDesign && (
             <ViewMoreButton
               onClick={() => handleToggle(setShowMoreDesign)}
@@ -713,9 +769,27 @@ function Team() {
           )}
           {showMoreDesign && (
             <>
-              <Mem src="/sanya.jpg" id="sanyaPandey" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/male.jpg" id="abhishekKushwaha" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/female.jpg" id="shubhiGupta" onClick={(e) => { toggleMemInfo(e) }} />
+              <Mem
+                src="/sanya.jpg"
+                id="sanyaPandey"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/male.jpg"
+                id="abhishekKushwaha"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/female.jpg"
+                id="shubhiGupta"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
               <ViewLessButton
                 onClick={() => handleToggle(setShowMoreDesign)}
                 className="viewLess"
@@ -733,9 +807,27 @@ function Team() {
         </Prog>
         <SubTitle className="programming">Programming |</SubTitle>
         <TeamBox>
-          <Mem src="/IMG_20240628_145721.jpg" id="pranavSingh" onClick={(e) => { toggleMemInfo(e) }} />
-          <Mem src="/Cs83848729.jpg" id="manasRai" onClick={(e) => { toggleMemInfo(e) }} />
-          <Mem src="/1716935731824.jpg" id="aryanGupta" onClick={(e) => { toggleMemInfo(e) }} />
+          <Mem
+            src="/IMG_20240628_145721.jpg"
+            id="pranavSingh"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
+          <Mem
+            src="/Cs83848729.jpg"
+            id="manasRai"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
+          <Mem
+            src="/1716935731824.jpg"
+            id="aryanGupta"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
           {!showMoreProgramming && (
             <ViewMoreButton
               onClick={() => handleToggle(setShowMoreProgramming)}
@@ -747,13 +839,59 @@ function Team() {
           )}
           {showMoreProgramming && (
             <>
-              <Mem src="/Anusha.jpg" id="anushaAgarwal" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/IMG-20241126-WA0005.jpg" id="abhinavYadav" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/IMG-20240916-WA0007.jpg" id="abhishekYadav" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/male.jpg" id="vaishnavGupta" onClick={(e) => { toggleMemInfo(e) }} /> {/* Vaishnav Gupta */}
-              <Mem src="/female.jpg" id="vaishnaviBhati" onClick={(e) => { toggleMemInfo(e) }} /> {/* Vaishnavi Bhati */}
-              <Mem src="/male.jpg" onClick={(e) => { toggleMemInfo(e) }} id="utkarshGupta" /> {/* Utkarsh Gupta */}
-              <Mem src="/male.jpg" onClick={(e) => { toggleMemInfo(e) }} id="tanmayKalra" /> {/* Tanmay Kalra */}
+              <Mem
+                src="/Anusha.jpg"
+                id="anushaAgarwal"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/IMG-20241126-WA0005.jpg"
+                id="abhinavYadav"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/IMG-20240916-WA0007.jpg"
+                id="abhishekYadav"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/male.jpg"
+                id="vaishnavGupta"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />{" "}
+              {/* Vaishnav Gupta */}
+              <Mem
+                src="/female.jpg"
+                id="vaishnaviBhati"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />{" "}
+              {/* Vaishnavi Bhati */}
+              <Mem
+                src="/male.jpg"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+                id="utkarshGupta"
+              />{" "}
+              {/* Utkarsh Gupta */}
+              <Mem
+                src="/male.jpg"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+                id="tanmayKalra"
+              />{" "}
+              {/* Tanmay Kalra */}
               <ViewLessButton
                 onClick={() => handleToggle(setShowMoreProgramming)}
                 className="viewLess"
@@ -769,9 +907,29 @@ function Team() {
         </Web>
         <SubTitle>Web Development |</SubTitle>
         <TeamBox>
-          <Mem src="/PXL_20240516_130321230.MP~5.jpg" id="dhanrajSingh" className="bottom" onClick={(e) => { toggleMemInfo(e) }} />
-          <Mem src="/IMG20240626214849~2.jpg" id="nipunKhatri" className="top" onClick={(e) => { toggleMemInfo(e) }} />
-          <Mem src="/hero.jpg" id="kuldeepPandit" onClick={(e) => { toggleMemInfo(e) }} />
+          <Mem
+            src="/PXL_20240516_130321230.MP~5.jpg"
+            id="dhanrajSingh"
+            className="bottom"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
+          <Mem
+            src="/IMG20240626214849~2.jpg"
+            id="nipunKhatri"
+            className="top"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
+          <Mem
+            src="/photo.jpg"
+            id="bhoomiAgarwal"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
           {!showMoreWeb && (
             <ViewMoreButton
               onClick={() => handleToggle(setShowMoreWeb)}
@@ -783,25 +941,75 @@ function Team() {
           )}
           {showMoreWeb && (
             <>
-
-              <Mem src="/photo.jpg" />
+              {/* <Mem src="/photo.jpg" />
               <Mem src="/IMG_20240526_193046.jpg" />
               <Mem src="/IMG_20241123_154657.jpg" className="top" />
               <Mem src="/Muskan.jpg" />
               <Mem src="/Disha.jpeg"  className="top"/>
-
+              
               <Mem src="/garima.jpeg" />
               <Mem src="/parthc.jpg"  />
               <Mem src="/female.jpg" />
-              <Mem src="/female.jpg" />
-              <Mem src="/photo.jpg" id="bhoomiAgarwal" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/IMG_20240526_193046.jpg" id="parthGupta" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/IMG_20241123_154657.jpg" id="utkarshSharma" className="top" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/Muskan.jpg" id="muskanJaiswal" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/garima.jpeg" id="garimaSingh" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/parthc.jpg" id="parthChaturvedi" className="top" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/female.jpg" id="harshitaSharma" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/female.jpg" id="dishaAggarwal" onClick={(e) => { toggleMemInfo(e) }} />
+            <Mem src="/female.jpg" /> */}
+              <Mem
+                src="/IMG_20240526_193046.jpg"
+                id="parthGupta"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/IMG_20241123_154657.jpg"
+                id="utkarshSharma"
+                className="top"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/Muskan.jpg"
+                id="muskanJaiswal"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/garima.jpeg"
+                id="garimaSingh"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/parthc.jpg"
+                id="parthChaturvedi"
+                className="top"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/hero.jpg"
+                id="kuldeepPandit"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/female.jpg"
+                id="harshitaSharma"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/Disha.jpeg"
+                id="dishaAggarwal"
+                className="top"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
               <ViewLessButton
                 onClick={() => handleToggle(setShowMoreWeb)}
                 className="viewLess"
@@ -809,7 +1017,6 @@ function Team() {
                 View Less &nbsp;
                 <StyledFontAwesomeIcon icon={faCaretUp} className="icon" />
               </ViewLessButton>
-
             </>
           )}
         </TeamBox>
@@ -818,9 +1025,28 @@ function Team() {
         </And>
         <SubTitle>Android & AIML |</SubTitle>
         <TeamBox>
-          <Mem src="/IMG-20230428-WA0023.jpg" id="vibhutiKapoor" className="top" onClick={(e) => { toggleMemInfo(e) }} />
-          <Mem src="/DSC_1026.JPG" id="yashShekhar" onClick={(e) => { toggleMemInfo(e) }} />
-          <Mem src="/IMG-20221128-WA0050.jpg" id="shrangikaGupta" onClick={(e) => { toggleMemInfo(e) }} />
+          <Mem
+            src="/IMG-20230428-WA0023.jpg"
+            id="vibhutiKapoor"
+            className="top"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
+          <Mem
+            src="/DSC_1026.JPG"
+            id="yashShekhar"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
+          <Mem
+            src="/IMG-20221128-WA0050.jpg"
+            id="shrangikaGupta"
+            onClick={(e) => {
+              toggleMemInfo(e);
+            }}
+          />
           {!showMoreAndroid && (
             <ViewMoreButton
               onClick={() => handleToggle(setShowMoreAndroid)}
@@ -832,10 +1058,34 @@ function Team() {
           )}
           {showMoreAndroid && (
             <>
-              <Mem src="/IMG_20231024_045140_695.jpg" id="harshitGoyal" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/IMG_20241126_164315.jpg" id="rounakAli" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/Ashita.jpg" id="ashitaMaheshwari" onClick={(e) => { toggleMemInfo(e) }} />
-              <Mem src="/ayan.jpg" id="ayanKhan" onClick={(e) => { toggleMemInfo(e) }} />
+              <Mem
+                src="/IMG_20231024_045140_695.jpg"
+                id="harshitGoyal"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/IMG_20241126_164315.jpg"
+                id="rounakAli"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/Ashita.jpg"
+                id="ashitaMaheshwari"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
+              <Mem
+                src="/ayan.jpg"
+                id="ayanKhan"
+                onClick={(e) => {
+                  toggleMemInfo(e);
+                }}
+              />
               <ViewLessButton
                 onClick={() => handleToggle(setShowMoreAndroid)}
                 className="viewLess"
