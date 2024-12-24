@@ -517,8 +517,8 @@ function Team() {
       post: null,
       about:
         "At the intersection of art and technology the Design Lead ensures our society's work is presented with clarity, creativity, and style.",
-      linkedin: "https://linkedin.com",
-      github: "https://github.com",
+      linkedin: "https://www.linkedin.com/in/parth-chaturvedi-dev/",
+      github: "https://github.com/ParthChaturvedi07",
     },
     harshitaSharma: {
       name: "Harshita Sharma",

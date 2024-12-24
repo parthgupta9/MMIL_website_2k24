@@ -56,7 +56,7 @@ const ClubCard = styled.div`
   padding: 20px;
   position: relative;
   transition: box-shadow 0.3s ease;
-  background: ${({ bg }) => bg};
+  background: ${({ $bg }) => $bg};
 
   &:hover {
     box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
@@ -185,7 +185,7 @@ function Clubs() {
           </ul>
         </Text1>
         <ClubGrid>
-          <ClubCard className="one" bg="linear-gradient(to bottom, #550d62, #27032d)">
+          <ClubCard className="one" $bg="linear-gradient(to bottom, #550d62, #27032d)">
             <CardTitle>WEB DEV</CardTitle>
             <CardText>
               Unveil the creativity behind our web development projects, where
@@ -193,7 +193,7 @@ function Clubs() {
             </CardText>
             <ExploreButton>Explore</ExploreButton>
           </ClubCard>
-          <ClubCard className="two" bg="linear-gradient(to bottom, #1f0749, #27032d)">
+          <ClubCard className="two" $bg="linear-gradient(to bottom, #1f0749, #27032d)">
             <CardTitle>DESIGN</CardTitle>
             <CardText>
               Explore cutting-edge projects and innovative solutions crafted by
@@ -201,7 +201,7 @@ function Clubs() {
             </CardText>
             <ExploreButton>Explore</ExploreButton>
           </ClubCard>
-          <ClubCard className="three" bg="linear-gradient(to bottom, #550d62, #27032d)">
+          <ClubCard className="three" $bg="linear-gradient(to bottom, #550d62, #27032d)">
             <CardTitle>PROGRAMMING</CardTitle>
             <CardText>
               Dive into our programming initiatives, where coding enthusiasts

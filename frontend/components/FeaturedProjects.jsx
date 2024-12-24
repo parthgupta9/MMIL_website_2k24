@@ -296,9 +296,11 @@ export const FeaturedProjects = () => {
                 <TextContent>
                   <ProjectTitle>Project 1</ProjectTitle>
                   <ProjectDescription>
+                    <p>
                     Unveil the creativity behind our web development projects,
                     where we build dynamic and user-friendly websites and
                     applications
+                    </p>
                   </ProjectDescription>
                   <ExploreButton>Explore</ExploreButton>
                 </TextContent>

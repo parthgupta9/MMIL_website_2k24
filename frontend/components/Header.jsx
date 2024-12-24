@@ -68,15 +68,15 @@ const Nav = styled.nav`
   width: 100%;
 
   @media (max-width: 768px) {
-    display: ${({ isMenuOpen }) => (isMenuOpen ? "flex" : "none")};
+    display: ${({ $isMenuOpen }) => ($isMenuOpen ? "flex" : "none")};
     flex-direction: column;
     gap: 3vh;
     align-items: flex-start;
     backdrop-filter: blur(5px);
     background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
-    border-radius: 10px; 
-    border: 1px solid rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 10px;
     position: absolute;
     top: 0;
@@ -141,7 +141,7 @@ export const Header = () => {
         block: "start",
       });
     }
-    setIsMenuOpen(false); // Close the menu after selecting an item
+    setIsMenuOpen(false); 
   };
 
   return (
@@ -155,7 +155,7 @@ export const Header = () => {
         <div></div>
       </BurgerMenu>
       <HeaderContainer>
-        <Nav isMenuOpen={isMenuOpen}>
+        <Nav $isMenuOpen={isMenuOpen}>
           {navItems.map((item, index) => (
             <NavItem
               key={index}
