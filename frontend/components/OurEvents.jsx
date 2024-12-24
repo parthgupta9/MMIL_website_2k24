@@ -25,12 +25,20 @@ const Title = styled.h1`
   margin-top: 200px;
 `;
 
+
 const EventGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 0px;
   row-gap: 4vh;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    row-gap: 20px;
+  }
 `;
 
 const EventCard = styled.div`
@@ -38,14 +46,28 @@ const EventCard = styled.div`
   justify-content: center;
   overflow: hidden;
   width: 55vh;
+
   ${({ variant }) =>
     variant === "deencode" &&
     `
       grid-column: 1;
       grid-row: 1;
       margin: 0 auto;
-      transform: translateX(24vh);
+      transform: translateX(22vh);
+
+      @media (max-width: 768px) {
+        transform: none; 
+        margin: 0;
+        width: 90%; 
+      }
+
+      @media (max-width: 480px) {
+        width: 100%; 
+        transform: none; 
+        margin: 0;
+      }
     `}
+
   ${({ variant }) =>
     variant === "hackocode" &&
     `
@@ -53,7 +75,20 @@ const EventCard = styled.div`
       grid-row: 2;
       transform: translateX(24vh);
       margin: -4vh auto;
+
+      @media (max-width: 768px) {
+        transform: none;
+        margin: 0;
+        width: 90%;
+      }
+
+      @media (max-width: 480px) {
+        width: 100%;
+        transform: none; 
+        margin: 0;
+      }
     `}
+
   ${({ variant }) =>
     variant === "logocon" &&
     `
@@ -62,7 +97,19 @@ const EventCard = styled.div`
       transform: translateX(-20vh);
       margin: 0 auto;
 
+      @media (max-width: 768px) {
+        transform: none;
+        margin: 0;
+        width: 90%;
+      }
+
+      @media (max-width: 480px) {
+        width: 100%;
+        transform: none; 
+        margin: 0;
+      }
     `}
+
   ${({ variant }) =>
     variant === "valorant" &&
     `
@@ -71,6 +118,16 @@ const EventCard = styled.div`
       margin-top: -140px;
       transform: translateX(-20vh);
       margin: -39vh auto;
+
+      @media (max-width: 768px) {
+        transform: none;
+        margin: 0;
+        width: 90%;
+      }
+
+      @media (max-width: 480px) {
+        width: 100%;
+      }
     `}
 `;
 
@@ -219,10 +276,7 @@ export const OurEvents = () => {
           </a>
         </EventCard>
         <CirclesRight className="circlesRight">
-          <img
-            src="/Frame 427318248.png"
-            className="circle-right-image"
-          />
+          <img src="/Frame 427318248.png" className="circle-right-image" />
         </CirclesRight>
       </EventGrid>
     </OurEventsContainer>
