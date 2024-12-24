@@ -5,18 +5,21 @@ import proj3vector1 from "../src/assets/proj3vector1.svg";
 import proj3vector2 from "../src/assets/proj3vector2.svg";
 import proj4vector1 from "../src/assets/proj4vector1.svg";
 import proj4vector2 from "../src/assets/proj4vector2.svg";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
-import gsap from "gsap";
 
 const Section = styled.div``;
 
 const Container = styled.div`
   text-align: center;
-  padding: 2rem;
-  overflow-x: hidden;
+  padding: 2rem 0;
+  // overflow-x: hidden;
   color: white;
-  height: 90vh;
+  height: 140vh;
+  margin-bottom: 5vh;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 1vh;
+  }
+
 `;
 
 const Title = styled.h1`
@@ -25,20 +28,53 @@ const Title = styled.h1`
   margin-bottom: 5rem;
 `;
 
+const Banner = styled.div`
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  text-align: center;
+`;
+
 const ProjectWrapper = styled.div`
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-direction: row;
-  width: 200%;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  top: 15%;
+  left: calc(50% - 10vh);
+  transform: translate(-50%, -50%) rotateY(0deg);
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  perspective-origin: center;
+  animation: autoRun 20s linear infinite;
+
+  @keyframes autoRun {
+    from {
+      transform: perspective(2000px) rotateX(-16deg) rotateY(0deg);
+    }
+    to {
+      transform: perspective(2000px) rotateX(-16deg) rotateY(360deg);
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    width: 160px;
+    height: 200px;
+    left: calc(50% - 8vh)
+  }
 `;
 
 const ProjectCard = styled.div`
-  position: relative;
+  position: absolute;
+  inset: 0;
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(500px);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 55vh;
+  top: 0;
+  height: 50vh;
   width: 30vw;
   border-radius: 15px;
   border: 1px solid #ffffff;
@@ -55,7 +91,7 @@ const ProjectCard = styled.div`
 
   &:nth-child(1) {
     overflow: hidden;
-    position: relative;
+    // position: relative;
     background: linear-gradient(180deg, #550d62 0%, #27032d 100%);
 
     img {
@@ -70,7 +106,7 @@ const ProjectCard = styled.div`
 
   &:nth-child(2) {
     overflow: hidden;
-    position: relative;
+    // position: relative;
     background: linear-gradient(180deg, #1f0749 0%, #27032d 100%);
 
     img {
@@ -91,7 +127,7 @@ const ProjectCard = styled.div`
 
   &:nth-child(3) {
     overflow: hidden;
-    position: relative;
+    // position: relative;
     background: linear-gradient(180deg, #2941d8 0%, #27032d 100%);
     img {
       position: absolute;
@@ -109,7 +145,7 @@ const ProjectCard = styled.div`
 
   &:nth-child(4) {
     overflow: hidden;
-    position: relative;
+    // position: relative;
     background: linear-gradient(180deg, #550d62 0%, #27032d 100%);
     img {
       position: absolute;
@@ -128,7 +164,7 @@ const ProjectCard = styled.div`
 
   &:nth-child(5) {
     background: linear-gradient(180deg, #2941d8 0%, #27032d 100%);
-    position: relative;
+    // position: relative;
     overflow: hidden;
     img {
       position: absolute;
@@ -140,22 +176,20 @@ const ProjectCard = styled.div`
         right: -10px;
         transform: rotate(90deg);
       }
-}}
-      @media (max-width: 768px) {
-  
-  
-    width: 20vw; /* Reduce card width */
-    height: 45vh; /* Reduce card height */
-    flex: 0 0 45%; /* Adjust flex behavior */
-  
-  }
-    @media (max-width: 480px) {
-    width: 90%; /* Use most of the screen width */
-    height: auto; /* Allow height to adjust dynamically */
-    padding: 1rem; /* Adjust padding */
-    img.svg-img {
-      display: none; /* Hide SVGs on phones */
     }
+  }
+  @media screen and (max-width: 1023px) {
+    transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(250px);
+  }
+
+  @media screen and (max-width: 767px) {
+    transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(180px);
   }
 `;
 
@@ -172,17 +206,11 @@ const ProjectTitle = styled.h2`
   font-size: 3rem;
   margin-bottom: 1rem;
   @media (max-width: 768px) {
-  
-
-  
-  
     font-size: 2rem;
-}
-    @media (max-width: 480px) {
-
+  }
+  @media (max-width: 480px) {
     font-size: 1.5rem;
   }
-
 `;
 
 const ProjectDescription = styled.p`
@@ -192,18 +220,16 @@ const ProjectDescription = styled.p`
   @media (max-width: 768px) {
     font-size: 0.9rem;
   }
-    @media (max-width: 480px) {
-
+  @media (max-width: 480px) {
     font-size: 0.8rem;
-    margin-bottom:1.5rem;
+    margin-bottom: 1.5rem;
   }
-
 `;
 
 const ExploreButton = styled.button`
   cursor: pointer;
   position: absolute;
-  bottom: 6vh;
+  bottom: 4vh;
   padding: 10px 24px;
   font-size: 18px;
   color: rgb(255, 20, 147);
@@ -241,36 +267,20 @@ const ExploreButton = styled.button`
   &:active {
     scale: 1;
   }
-    @media (max-width: 768px) {
+
+  @media (max-width: 768px) {
     font-size: 16px;
-    margin-top:8px;
+    margin-top: 8px;
   }
-    @media (max-width: 480px) {
+
+  @media (max-width: 480px) {
     font-size: 14px;
     padding: 8px 20px;
-    margin-top:8px; /* Adjust button padding */
+    margin-top: 8px;
   }
 `;
 
-
 export const FeaturedProjects = () => {
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".project-container",
-        scroller: "body",
-        start: "top 0%",
-        end: "top -100%",
-        // markers: true,
-        scrub: 3,
-        pin: true,
-      },
-    });
-    tl.to(".project-wrapper", {
-      transform: "translate(-50%)",
-    });
-  }, []);
   return (
     <>
       <hr style={{ width: "75%", margin: "0 auto" }} />
@@ -278,83 +288,98 @@ export const FeaturedProjects = () => {
       <Section id="projects">
         <Container className="project-container">
           <Title className="featured-projects">Featured Projects</Title>
-          <ProjectWrapper className="project-wrapper">
-            <ProjectCard>
-              <img src={proj2vector2} alt="" />
-              <img src={proj3vector1} alt="" />
-              <TextContent>
-                <ProjectTitle>Project 1</ProjectTitle>
-                <ProjectDescription>
-                  Unveil the creativity behind our web development projects,
-                  where we build dynamic and user-friendly websites and
-                  applications
-                </ProjectDescription>
-                <ExploreButton>Explore</ExploreButton>
-              </TextContent>
-            </ProjectCard>
-            <ProjectCard>
-              <img src={proj4vector1} alt="" />
-              <img src={proj2vector2} alt="" />
+          <Banner className="banner">
+            <ProjectWrapper className="slider" style={{ "--quantity": 5 }}>
+              <ProjectCard className="project-card" style={{ "--position": 1 }}>
+                <img src={proj2vector2} alt="" />
+                <img src={proj3vector1} alt="" />
+                <TextContent>
+                  <ProjectTitle>Project 1</ProjectTitle>
+                  <ProjectDescription>
+                    Unveil the creativity behind our web development projects,
+                    where we build dynamic and user-friendly websites and
+                    applications
+                  </ProjectDescription>
+                  <ExploreButton>Explore</ExploreButton>
+                </TextContent>
+              </ProjectCard>
+              <ProjectCard
+                className=".project-card"
+                style={{ "--position": 2 }}
+              >
+                <img src={proj4vector1} alt="" />
+                <img src={proj2vector2} alt="" />
 
-              <TextContent>
-                <ProjectTitle>Project 2</ProjectTitle>
-                <ProjectDescription>
-                  <p>
-                    Explore cutting-edge projects and innovative solutions
-                    crafted by our talented team of designers in the Technical
-                    Society
-                  </p>
-                </ProjectDescription>
-                <ExploreButton>Explore</ExploreButton>
-              </TextContent>
-            </ProjectCard>
-            <ProjectCard>
-              <img src={proj3vector2} alt="" />
-              <img src={proj4vector2} alt="" />
+                <TextContent>
+                  <ProjectTitle>Project 2</ProjectTitle>
+                  <ProjectDescription>
+                    <p>
+                      Explore cutting-edge projects and innovative solutions
+                      crafted by our talented team of designers in the Technical
+                      Society
+                    </p>
+                  </ProjectDescription>
+                  <ExploreButton>Explore</ExploreButton>
+                </TextContent>
+              </ProjectCard>
+              <ProjectCard
+                className=".project-card"
+                style={{ "--position": 3 }}
+              >
+                <img src={proj3vector2} alt="" />
+                <img src={proj4vector2} alt="" />
 
-              <TextContent>
-                <ProjectTitle>Project 3</ProjectTitle>
-                <ProjectDescription>
-                  <p>
-                    Discover our Android development endeavors, showcasing
-                    innovative apps and solutions for mobile technology
-                  </p>
-                </ProjectDescription>
-                <ExploreButton>Explore</ExploreButton>
-              </TextContent>
-            </ProjectCard>
-            <ProjectCard>
-              <img src={proj3vector1} alt="" />
-              <img src={proj4vector1} alt="" />
+                <TextContent>
+                  <ProjectTitle>Project 3</ProjectTitle>
+                  <ProjectDescription>
+                    <p>
+                      Discover our Android development endeavors, showcasing
+                      innovative apps and solutions for mobile technology
+                    </p>
+                  </ProjectDescription>
+                  <ExploreButton>Explore</ExploreButton>
+                </TextContent>
+              </ProjectCard>
+              <ProjectCard
+                className=".project-card"
+                style={{ "--position": 4 }}
+              >
+                <img src={proj3vector1} alt="" />
+                <img src={proj4vector1} alt="" />
 
-              <TextContent>
-                <ProjectTitle>Project 4</ProjectTitle>
-                <ProjectDescription>
-                  <p>
-                    Explore our AI/ML innovations and intelligent solutions that redefine technology
-                    through automation and data-driven insights
-                  </p>
-                </ProjectDescription>
-                <ExploreButton>Explore</ExploreButton>
-              </TextContent>
-            </ProjectCard>
-            <ProjectCard>
-              <img src={proj4vector2} alt="" />
-              <img src={proj2vector2} alt="" />
+                <TextContent>
+                  <ProjectTitle>Project 4</ProjectTitle>
+                  <ProjectDescription>
+                    <p>
+                      Explore our AI/ML innovations and intelligent solutions
+                      that redefine technology through automation and
+                      data-driven insights
+                    </p>
+                  </ProjectDescription>
+                  <ExploreButton>Explore</ExploreButton>
+                </TextContent>
+              </ProjectCard>
+              <ProjectCard
+                className=".project-card"
+                style={{ "--position": 5 }}
+              >
+                <img src={proj4vector2} alt="" />
+                <img src={proj2vector2} alt="" />
 
-              <TextContent>
-                <ProjectTitle>Project 5</ProjectTitle>
-                <ProjectDescription>
-                  <p>
-                    Dive into our programming initiatives, where coding
-                    enthusiasts develop powerful software and drive
-                    technological advancements
-                  </p>
-                </ProjectDescription>
-                <ExploreButton>Explore</ExploreButton>
-              </TextContent>
-            </ProjectCard>
-          </ProjectWrapper>
+                <TextContent>
+                  <ProjectTitle>Project 5</ProjectTitle>
+                  <ProjectDescription>
+                    <p>
+                      Dive into our programming initiatives, where coding
+                      enthusiasts develop powerful software and drive
+                      technological advancements
+                    </p>
+                  </ProjectDescription>
+                  <ExploreButton>Explore</ExploreButton>
+                </TextContent>
+              </ProjectCard>
+            </ProjectWrapper>
+          </Banner>
         </Container>
       </Section>
 
