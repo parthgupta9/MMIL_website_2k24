@@ -23,16 +23,26 @@ const Title = styled.div`
   text-align: center;
   font-size: 8vh;
   font-weight: bold;
+
+  @media (min-width: 468px) and (max-width: 768px) {
+    font-size: 6vh;
+  }
+
+  @media (max-width: 430px) {
+    font-size: 5vh;
+    font-weight: bold;
+  }
 `;
 
 const ShapeL = styled.img`
   position: absolute;
   top: -200px;
+  z-index: -1;
 
   @media (max-width: 768px) {
-    transform: scale(0.6);
-    left: -7%;
-    z-index: -1;
+    transform: scale(0.5);
+    top: -250px;
+    left: -12%;
   }
 `;
 
@@ -52,7 +62,7 @@ const Cube = styled.img`
     transform: scale(0.6);
     z-index: -2;
     top: -330px;
-    right: -60%;
+    right: -80%;
   }
 `;
 
@@ -66,6 +76,14 @@ const SubTitle = styled.h1`
 
   &.programming {
     margin-top: -300px;
+  }
+
+  @media (min-width: 468px) and (max-width: 768px) {
+    font-size: 7vh;
+  }
+
+  @media (max-width: 467px) {
+    font-size: 6vh;
   }
 `;
 
@@ -130,6 +148,14 @@ const Prog = styled.div`
   display: flex;
   z-index: 1;
   margin-top: -50px;
+
+  @media (min-width: 468px) and (max-width: 768px) {
+    transform: scale(0.8);
+  }
+
+  @media (max-width: 467px) {
+    transform: scale(0.6);
+  }
 `;
 
 const Web = styled.div`
@@ -141,6 +167,17 @@ const Web = styled.div`
 const WebLine = styled.img`
   position: absolute;
   top: -250px;
+
+  @media (min-width: 468px) and (max-width: 768px) {
+    transform: scale(0.8);
+    right: 0;
+  }
+
+  @media (max-width: 467px) {
+    transform: scale(0.9);
+    right: -20%;
+    z-index: -1;
+  }
 `;
 
 const And = styled.div`
@@ -152,6 +189,17 @@ const And = styled.div`
 const AndLine = styled.img`
   position: absolute;
   top: -250px;
+
+  @media (min-width: 468px) and (max-width: 768px) {
+    transform: scale(0.8);
+    right: 0;
+  }
+
+  @media (max-width: 467px) {
+    transform: scale(0.6);
+    right: -63%;
+    z-index: -1;
+  }
 `;
 
 const ViewMoreButton = styled.button`
