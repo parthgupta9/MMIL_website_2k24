@@ -116,7 +116,7 @@ const Details = styled.div`
 const Footer = () => {
   return (
     <FooterContainer>
-      <Section style={{ alignItems: 'flex-start' }}>
+      <Section >
         <img
           src="logo.png"
           alt="Microsoft Mobile Innovation Lab"
@@ -153,7 +153,7 @@ const Footer = () => {
         </List>
       </Section>
 
-      <Section style={{ alignItems: 'flex-start' }}>
+      <Section>
         <SectionTitle>Let's Talk</SectionTitle>
         <SocialLinks>
           <a href="https://www.linkedin.com/company/mmil/">

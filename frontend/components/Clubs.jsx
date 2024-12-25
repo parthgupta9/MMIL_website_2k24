@@ -9,6 +9,9 @@ const Section = styled.div``
 const Container = styled.div`
   margin-top: 50px;
   position: relative;
+  @media (max-width:780px){
+      margin-top:0;
+    }
 `;
 
 const Title = styled.div`
@@ -17,6 +20,11 @@ const Title = styled.div`
   text-align: center;
   font-size: 8vh;
   font-weight: bold;
+
+  @media (max-width:780px){
+      margin-bottom: 100px;
+    }
+
 `;
 
 const ClubGrid = styled.div`
@@ -26,6 +34,12 @@ const ClubGrid = styled.div`
   grid-gap: 20px 20px;
   place-items: center;
   padding: 80px 80px 0 80px;
+
+  @media (max-width:780px){
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
+    padding:50px 0 0 0;
+  }
 `;
 
 const ClubCard = styled.div.attrs(({ className }) => ({
@@ -43,26 +57,47 @@ const ClubCard = styled.div.attrs(({ className }) => ({
   position: relative;
   transition: box-shadow 0.3s ease;
 
+  @media (max-width:780px){
+    width:80vw;
+  }
+
   &.one {
     grid-row: 1/3;
     background: linear-gradient(to bottom, #550d62, #27032d);
+
+    @media (max-width:780px){
+      grid-row:2/3;
+    }
   }
 
   &.two {
     grid-row: 1/2;
     grid-column: 2/3;
     background: linear-gradient(to bottom, #1f0749, #27032d);
+
+    @media (max-width:780px){
+      grid-column:1/2;
+      grid-row:1/2;
+    }
   }
 
   &.three {
     grid-row: 2/3;
     grid-column: 2/3;
     background: linear-gradient(to bottom, #550d62, #27032d);
+    @media (max-width:780px){
+      grid-column:1/2;
+      grid-row:3/4;
+    }
   }
 
   &.four {
     grid-row: 1/3;
     background: linear-gradient(to bottom, #2941d8, #27032d);
+    @media (max-width:780px){
+      grid-row:4/5;
+      margin-bottom: 200px;
+    }
   }
 
   &:hover {
@@ -195,6 +230,11 @@ const Text1 = styled.p`
   top: 150px;
   line-height: 40px;
   width: 25vw;
+  @media (max-width:780px){
+    width:80vw;
+    top:100px;
+    left:10vw;
+  }
 `;
 const Text2 = styled.p`
   color: white;
@@ -203,6 +243,11 @@ const Text2 = styled.p`
   bottom: 0.1vw;
   line-height: 40px;
   width: 25vw;
+  @media (max-width:780px){
+    width:80vw;
+    left:15vw;
+    bottom: 0;
+  }
 `;
 
 function Clubs() {

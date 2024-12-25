@@ -56,15 +56,15 @@ const SphereContainer = styled.div`
       transform: translate(-50%, -50%);
     }
     img:nth-child(1) {
-      top: 5vh;
+top: 34vh;
     }
 
     img:nth-child(2) {
-      top: 24vh;
+      top: 45vh;
     }
 
     img:nth-child(3) {
-      top: 44vh;
+      top: 57vh;
     }
   }
 `;

@@ -14,6 +14,7 @@ const OurEventsContainer = styled.section`
   color: white;
   padding: 40px;
   width: 100%;
+  margin-top:-50px;
 `;
 
 const Title = styled.h1`
@@ -23,8 +24,11 @@ const Title = styled.h1`
   text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
   margin-bottom: 40px;
   margin-top: 200px;
+  @media (max-width:780px){
+    font-size:2rem;
+    margin-top:90px;
+  }
 `;
-
 
 const EventGrid = styled.div`
   display: grid;
@@ -32,12 +36,8 @@ const EventGrid = styled.div`
   column-gap: 0px;
   row-gap: 4vh;
   justify-content: center;
-
-  @media (max-width: 768px) {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    row-gap: 20px;
+  @media (max-width:780px){
+    grid-template-columns: auto;
   }
 `;
 
@@ -46,28 +46,20 @@ const EventCard = styled.div`
   justify-content: center;
   overflow: hidden;
   width: 55vh;
-
   ${({ variant }) =>
     variant === "deencode" &&
     `
       grid-column: 1;
       grid-row: 1;
       margin: 0 auto;
-      transform: translateX(22vh);
-
-      @media (max-width: 768px) {
-        transform: none; 
-        margin: 0;
-        width: 90%; 
-      }
-
-      @media (max-width: 480px) {
-        width: 100%; 
-        transform: none; 
-        margin: 0;
+      transform: translateX(24vh);
+      @media (max-width:780px){
+        grid-column:1/2;
+        grid-row:1/2;
+        transform:translateX(0);
+        height:400px;
       }
     `}
-
   ${({ variant }) =>
     variant === "hackocode" &&
     `
@@ -75,20 +67,12 @@ const EventCard = styled.div`
       grid-row: 2;
       transform: translateX(24vh);
       margin: -4vh auto;
-
-      @media (max-width: 768px) {
-        transform: none;
-        margin: 0;
-        width: 90%;
-      }
-
-      @media (max-width: 480px) {
-        width: 100%;
-        transform: none; 
-        margin: 0;
+      @media (max-width:780px){
+        grid-column:1/2;
+        grid-row:2/3;
+        transform:translateX(0);
       }
     `}
-
   ${({ variant }) =>
     variant === "logocon" &&
     `
@@ -96,20 +80,12 @@ const EventCard = styled.div`
       grid-row: 1;
       transform: translateX(-20vh);
       margin: 0 auto;
-
-      @media (max-width: 768px) {
-        transform: none;
-        margin: 0;
-        width: 90%;
-      }
-
-      @media (max-width: 480px) {
-        width: 100%;
-        transform: none; 
-        margin: 0;
+      @media (max-width:780px){
+        grid-column:1/2;
+        grid-row:3/4;
+        transform: translateX(0);
       }
     `}
-
   ${({ variant }) =>
     variant === "valorant" &&
     `
@@ -118,25 +94,22 @@ const EventCard = styled.div`
       margin-top: -140px;
       transform: translateX(-20vh);
       margin: -39vh auto;
-
-      @media (max-width: 768px) {
-        transform: none;
-        margin: 0;
-        width: 90%;
-      }
-
-      @media (max-width: 480px) {
-        width: 100%;
+      @media (max-width:780px){
+        grid-column:1/2;
+        grid-row:4/5;
+        margin:0;
+        transform:translateX(0);
       }
     `}
 `;
 
 const EventImage = styled.img`
-  width: 100%;
+  width:70%;
   height: 100%
   border-radius: 10px;
   margin-bottom: 10px;
   object-fit: cover;
+  
 `;
 
 const CirclesLeft = styled.div`
@@ -145,10 +118,11 @@ const CirclesLeft = styled.div`
   left: -27%;
   top: 0;
 
-  @media (max-width: 768px) {
-    z-index: 2;
+  img{
+    @media (max-width:780px){
+      height:150px; 
+    }
   }
-
 `;
 
 const CirclesRight = styled.div`
@@ -157,8 +131,10 @@ const CirclesRight = styled.div`
   right: -27%;
   top: 50%;
 
-  @media (max-width: 768px) {
-    z-index: -2;
+  img{
+    @media (max-width:780px){
+      height:150px; 
+    }
   }
 `;
 
@@ -170,11 +146,23 @@ const HRandIcons = styled.div`
   & > img:nth-child(3) {
     position: absolute;
     right: 0;
+    @media (max-width:780px){
+      height:120px;
+    }
+  }
+
+  & > img:nth-child(2) {
+    @media (max-width:780px){
+     height:100px;
+    }
   }
 
   & > img:nth-child(1) {
-    display: none;
+    @media (max-width:780px){
+      width:60vw;
+    }
   }
+
 `;
 export const OurEvents = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -185,7 +173,7 @@ export const OurEvents = () => {
         trigger: ".events-container",
         scroller: "body",
         start: "top 50%",
-        end: "top -60%",
+        end: "top -10%",
         // markers: true,
         scrub: 3,
       },
@@ -289,7 +277,10 @@ export const OurEvents = () => {
           </a>
         </EventCard>
         <CirclesRight className="circlesRight">
-          <img src="/Frame 427318248.png" className="circle-right-image" />
+          <img
+            src="/Frame 427318248.png"
+            className="circle-right-image"
+          />
         </CirclesRight>
       </EventGrid>
     </OurEventsContainer>

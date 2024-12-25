@@ -22,7 +22,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 767px) {
     margin-bottom: 1vh;
-    height: 100vh;
+    height:110vh;
   }
 `;
 
@@ -37,6 +37,9 @@ const Banner = styled.div`
   width: 100%;
   position: relative;
   text-align: center;
+  @media (max-width:780px){
+    height:40vh;
+  }
 `;
 
 const ProjectWrapper = styled.div`
@@ -192,15 +195,11 @@ const ProjectCard = styled.div`
 
   @media screen and (max-width: 767px) {
     transform: rotateY(
-        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
-      )
-      translateZ(120px);
-    font-size: 2rem;
-  }
-
-  @media (max-width: 480px) {
-    height: 40vh;
-    width: 30vw;
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(180px);
+    width:50vw;
+    height:40vh;
   }
 `;
 
@@ -297,6 +296,15 @@ const ExploreButton = styled.button`
     margin-top: 8px;
   }
 `;
+
+const BottomBorder=styled.hr`
+  width:75%;
+  margin:0 auto;
+  @media(max-width:780px){
+    margin-top:-50px;
+  }
+
+`
 
 export const FeaturedProjects = () => {
   return (
@@ -403,7 +411,7 @@ export const FeaturedProjects = () => {
         </Container>
       </Section>
 
-      <hr style={{ width: "75%", margin: "0 auto" }} />
+      <BottomBorder />
     </>
   );
 };

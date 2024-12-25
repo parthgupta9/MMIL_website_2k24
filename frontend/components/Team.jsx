@@ -15,6 +15,9 @@ const Section = styled.div``;
 const Container = styled.div`
   margin-top: 100px;
   position: relative;
+  @media (max-width:780px){
+    margin-top:50px;
+  }
 `;
 
 const Title = styled.div`
@@ -23,26 +26,18 @@ const Title = styled.div`
   text-align: center;
   font-size: 8vh;
   font-weight: bold;
-
-  @media (min-width: 468px) and (max-width: 768px) {
-    font-size: 6vh;
-  }
-
-  @media (max-width: 430px) {
-    font-size: 5vh;
-    font-weight: bold;
+  @media (max-width:780px){
+    font-size:2rem;
   }
 `;
 
 const ShapeL = styled.img`
   position: absolute;
   top: -200px;
-  z-index: -1;
-
-  @media (max-width: 768px) {
-    transform: scale(0.5);
-    top: -250px;
-    left: -12%;
+  z-index:-1;
+  @media (max-width:780px){
+    height:150px;
+    top:-50px;
   }
 `;
 
@@ -50,6 +45,10 @@ const ShapeR = styled.img`
   position: absolute;
   right: 0;
   top: 600px;
+  @media (max-width:780px){
+      height:200px;
+      top:300px;
+  }
 `;
 
 const Cube = styled.img`
@@ -57,12 +56,9 @@ const Cube = styled.img`
   right: 0;
   top: -170px;
   z-index: -1;
-
-  @media (max-width: 768px) {
-    transform: scale(0.6);
-    z-index: -2;
-    top: -330px;
-    right: -80%;
+  @media (max-width:780px){
+    height:200px;
+    top:-20px;
   }
 `;
 
@@ -74,16 +70,28 @@ const SubTitle = styled.h1`
   font-weight: bold;
   margin-top: 100px;
 
+  @media (max-width:780px){
+    font-size:1.5rem;
+    margin-top:50px;
+  }
+
   &.programming {
     margin-top: -300px;
+    @media (max-width:780px){
+      margin-top:-150px;
+    }
+  }
+  
+  &.webd {
+    @media (max-width:780px){
+      margin-top:30px;
+    }
   }
 
-  @media (min-width: 468px) and (max-width: 768px) {
-    font-size: 7vh;
-  }
-
-  @media (max-width: 467px) {
-    font-size: 6vh;
+  &.android {
+    @media (max-width:780px){
+      margin-top:10px;
+    }
   }
 `;
 
@@ -94,6 +102,10 @@ const TeamBox = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
+  @media (max-width:780px){
+    width:100%;
+    margin: 20px auto;
+  }
 `;
 
 const Mem = styled.img`
@@ -106,6 +118,12 @@ const Mem = styled.img`
   z-index: 2;
   cursor: pointer;
   transition: all 0.1s ease;
+
+  @media (max-width:780px){
+    height:100px;
+    width:100px;
+    margin: 20px 10px;
+  }
 
   &.top {
     object-position: top;
@@ -122,6 +140,10 @@ const Mem = styled.img`
     left: 20vw;
     box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
+    @media (max-width: 780px) {
+      left: 35vw; 
+      top:35vw;
+    }
   }
 
   &:hover {
@@ -142,19 +164,19 @@ const ProgTopLine = styled.img`
   top: 103px;
   left: -62px;
   width: 70vw;
+  @media (max-width:780px){
+    top:46px;
+    left:-29px;
+    width:60vw;
+  }
 `;
 
 const Prog = styled.div`
   display: flex;
   z-index: 1;
   margin-top: -50px;
-
-  @media (min-width: 468px) and (max-width: 768px) {
-    transform: scale(0.8);
-  }
-
-  @media (max-width: 467px) {
-    transform: scale(0.6);
+  @media (max-width:780px){
+    height:220px;
   }
 `;
 
@@ -167,16 +189,9 @@ const Web = styled.div`
 const WebLine = styled.img`
   position: absolute;
   top: -250px;
-
-  @media (min-width: 468px) and (max-width: 768px) {
-    transform: scale(0.8);
-    right: 0;
-  }
-
-  @media (max-width: 467px) {
-    transform: scale(0.9);
-    right: -20%;
-    z-index: -1;
+  @media (max-width:780px){
+    height:150px;    
+    top:-80px
   }
 `;
 
@@ -189,16 +204,9 @@ const And = styled.div`
 const AndLine = styled.img`
   position: absolute;
   top: -250px;
-
-  @media (min-width: 468px) and (max-width: 768px) {
-    transform: scale(0.8);
-    right: 0;
-  }
-
-  @media (max-width: 467px) {
-    transform: scale(0.6);
-    right: -63%;
-    z-index: -1;
+  @media (max-width:780px){
+     height:150px;
+     top:-100px; 
   }
 `;
 
@@ -286,10 +294,14 @@ const MemName = styled.h2`
   color: white;
   text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
   text-align: center;
-  font-size: 8vh;
+  font-size: 3rem;
   font-weight: bold;
   margin-left: 30vw;
   padding: 0 20px;
+  @media (max-width: 780px) {
+    font-size: 2rem;
+    margin:150px auto 0 auto;
+  }
 `;
 
 const MemPost = styled.p`
@@ -299,6 +311,10 @@ const MemPost = styled.p`
   font-size: 4vh;
   font-weight: bold;
   margin-left: 30vw;
+  @media (max-width: 780px) {
+    font-size: 1.5rem;
+    margin:0 auto;
+  }
 `;
 
 const MemYear = styled.p`
@@ -308,6 +324,10 @@ const MemYear = styled.p`
   font-size: 4vh;
   font-weight: bold;
   margin-left: 30vw;
+  @media (max-width: 780px) {
+    font-size: 1.5rem;
+    margin:0 auto;
+  }
 `;
 
 const CloseBtn = styled(FontAwesomeIcon)`
@@ -329,6 +349,11 @@ const ConnectionBox = styled.div`
   width: 10vw;
   margin-top: 10vh;
   margin-left: 10vw;
+  @media (max-width: 780px) {
+    flex-wrap:wrap;
+    width:80vw;
+    margin-left:0;
+  }
 `;
 
 const GitHub = styled.img`
@@ -337,6 +362,7 @@ const GitHub = styled.img`
   &:hover {
     transform: scale(1.1);
   }
+  
 `;
 
 const LinkedIn = styled.img`
@@ -345,6 +371,10 @@ const LinkedIn = styled.img`
   transition: all 0.1s ease;
   &:hover {
     transform: scale(1.1);
+  }
+  @media (max-width: 780px) {
+    margin-left:0;
+    margin-top:20px;
   }
 `;
 
@@ -966,7 +996,7 @@ function Team() {
         <Web className="web">
           <WebLine className="webLine" src="/Group 3674.svg" />
         </Web>
-        <SubTitle>Web Development |</SubTitle>
+        <SubTitle className="webd">Web Development |</SubTitle>
         <TeamBox>
           <Mem
             src="/PXL_20240516_130321230.MP~5.jpg"
@@ -1084,7 +1114,7 @@ function Team() {
         <And className="and">
           <AndLine className="andLine" src="/Group 3667.svg" />
         </And>
-        <SubTitle>Android & AIML |</SubTitle>
+        <SubTitle className="android">Android & AIML |</SubTitle>
         <TeamBox>
           <Mem
             src="/IMG-20230428-WA0023.jpg"
