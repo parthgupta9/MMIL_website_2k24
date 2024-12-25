@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { Header } from "./Header";
 import OrangeSphere from "../src/assets/OrangeSphere.svg";
 import BlueSphere from "../src/assets/BlueSphere.svg";
@@ -57,7 +56,7 @@ const SphereContainer = styled.div`
       transform: translate(-50%, -50%);
     }
     img:nth-child(1) {
-      top: 34vh;
+top: 34vh;
     }
 
     img:nth-child(2) {
@@ -99,14 +98,13 @@ const Greeting = styled.h1`
     font-size: 4rem;
     margin-top: 20vh;
   }
- 
+
   @media (min-width: 600px) and (max-width: 1024px) {
     font-size: 4.5rem;
     margin-top: 15vh;
   }
 `;
 
-// SubText (p element)
 const SubText = styled.p`
   font-size: 4rem;
   margin: 5px 0;
@@ -114,7 +112,7 @@ const SubText = styled.p`
   @media (max-width: 430px) {
     font-size: 4.5rem;
   }
-  
+
   @media (min-width: 600px) and (max-width: 1024px) {
     font-size: 4.5rem;
     margin-top: 2vh;
@@ -138,7 +136,6 @@ const Title = styled.h2`
   }
 `;
 
-// Motto container (flexbox)
 const Motto = styled.div`
   display: flex;
   justify-content: center;
@@ -172,7 +169,7 @@ const MottoText = styled.span`
     font-size: 2.5rem;
     transform: translateY(0);
   }
- 
+
   @media (min-width: 600px) and (max-width: 1024px) {
     font-size: 2.75rem;
     transform: translateY(0);
@@ -180,41 +177,121 @@ const MottoText = styled.span`
 `;
 
 export const Hero = () => {
-  useGSAP(() => {
-    const tl = gsap.timeline();
+  useEffect(() => {
+    const mm = gsap.matchMedia();
 
-    tl.fromTo(
-      "#SphereContainer img",
-      {
-        y: "-150vh",
+    // Add mobile-specific animations
+    mm.add("(max-width: 430px)", () => {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        "#SphereContainer img",
+        {
+          y: "-150vh",
+          opacity: 0,
+        },
+        {
+          y: "-29vh",
+          opacity: 1,
+          duration: 1,
+          stagger: 0.3,
+          // ease: "power2.inOut",
+        },
+        "Sphere"
+      );
+      tl.from(
+        "#text",
+        {
+          opacity: 0,
+          y: -150,
+          delay: 0.9,
+          duration: 1,
+          // ease: "power2.inOut",
+        },
+        "Sphere"
+      );
+      tl.from("#text #motto span", {
         opacity: 0,
-      },
-      {
-        y: "-29vh",
-        opacity: 1,
-        duration: 1,
+        y: -40,
         stagger: 0.3,
-        // ease: "power2.inOut",
-      },
-      "Sphere"
-    );
-    tl.from(
-      "#text",
-      {
-        opacity: 0,
-        y: -150,
-        delay: 0.9,
-        duration: 1,
-        // ease: "power2.inOut",
-      },
-      "Sphere"
-    );
-    tl.from("#text #motto span", {
-      opacity: 0,
-      y: -40,
-      stagger: 0.3,
-      ease: "bounce.out",
+        ease: "bounce.out",
+      });
     });
+
+    // Add tablet-specific animations
+    mm.add("(min-width: 431px) and (max-width: 1024px)", () => {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        "#SphereContainer img",
+        {
+          y: "-150vh",
+          opacity: 0,
+        },
+        {
+          y: "-29vh",
+          opacity: 1,
+          duration: 1,
+          stagger: 0.3,
+          // ease: "power2.inOut",
+        },
+        "Sphere"
+      );
+      tl.from(
+        "#text",
+        {
+          opacity: 0,
+          y: -150,
+          delay: 0.9,
+          duration: 1,
+          // ease: "power2.inOut",
+        },
+        "Sphere"
+      );
+      tl.from("#text #motto span", {
+        opacity: 0,
+        y: -40,
+        stagger: 0.3,
+        ease: "bounce.out",
+      });
+    });
+
+    // Add desktop-specific animations
+    mm.add("(min-width: 1025px)", () => {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        "#SphereContainer img",
+        {
+          y: "-150vh",
+          opacity: 0,
+        },
+        {
+          y: "-29vh",
+          opacity: 1,
+          duration: 1,
+          stagger: 0.3,
+          // ease: "power2.inOut",
+        },
+        "Sphere"
+      );
+      tl.from(
+        "#text",
+        {
+          opacity: 0,
+          y: -150,
+          delay: 0.9,
+          duration: 1,
+          // ease: "power2.inOut",
+        },
+        "Sphere"
+      );
+      tl.from("#text #motto span", {
+        opacity: 0,
+        y: -40,
+        stagger: 0.3,
+        ease: "bounce.out",
+      });
+    });
+
+    return () => mm.revert(); // Clean up GSAP animations on component unmount
   }, []);
 
   return (

@@ -13,20 +13,23 @@ const Container = styled.div`
   padding: 2rem 0;
   // overflow-x: hidden;
   color: white;
-  height: 140vh;
+  height: 110vh;
   margin-bottom: 5vh;
+
+  @media (max-width: 480px) {
+    height: 100vh;
+  }
 
   @media screen and (max-width: 767px) {
     margin-bottom: 1vh;
     height:110vh;
   }
-
 `;
 
 const Title = styled.h1`
   font-size: 8vh;
   text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 `;
 
 const Banner = styled.div`
@@ -53,17 +56,17 @@ const ProjectWrapper = styled.div`
 
   @keyframes autoRun {
     from {
-      transform: perspective(2000px) rotateX(-16deg) rotateY(0deg);
+      transform: perspective(2000px) rotateY(0deg);
     }
     to {
-      transform: perspective(2000px) rotateX(-16deg) rotateY(360deg);
+      transform: perspective(2000px) rotateY(360deg);
     }
   }
 
   @media screen and (max-width: 1023px) {
     width: 160px;
     height: 200px;
-    left: calc(50% - 8vh)
+    left: calc(50% - 8vh);
   }
 `;
 
@@ -182,11 +185,12 @@ const ProjectCard = styled.div`
       }
     }
   }
+
   @media screen and (max-width: 1023px) {
     transform: rotateY(
-      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
-    )
-    translateZ(250px);
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(250px);
   }
 
   @media screen and (max-width: 767px) {
@@ -206,16 +210,21 @@ const TextContent = styled.div`
   margin-top: 4em;
   height: 100%;
   z-index: 1;
+
+  @media (max-width: 480px) {
+    margin-top: 1em;
+  }
 `;
 
 const ProjectTitle = styled.h2`
   font-size: 3rem;
   margin-bottom: 1rem;
+
   @media (max-width: 768px) {
     font-size: 2rem;
   }
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -223,11 +232,13 @@ const ProjectDescription = styled.p`
   font-size: 1rem;
   line-height: 1.4;
   margin-bottom: 1rem;
+
   @media (max-width: 768px) {
     font-size: 0.9rem;
   }
+
   @media (max-width: 480px) {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     margin-bottom: 1.5rem;
   }
 `;
@@ -312,9 +323,9 @@ export const FeaturedProjects = () => {
                   <ProjectTitle>Project 1</ProjectTitle>
                   <ProjectDescription>
                     <p>
-                    Unveil the creativity behind our web development projects,
-                    where we build dynamic and user-friendly websites and
-                    applications
+                      Unveil the creativity behind our web development projects,
+                      where we build dynamic and user-friendly websites and
+                      applications
                     </p>
                   </ProjectDescription>
                   <ExploreButton>Explore</ExploreButton>
