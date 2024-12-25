@@ -27,7 +27,7 @@ const GetInTouchContainer = styled.section`
   @media (max-width: 48rem) {
     width: 90%;
     padding: 1rem;
-    margin: 2rem auto;
+    margin: 5rem auto;
   }
 `;
 
@@ -49,7 +49,7 @@ const SocialLinksContainer = styled.div`
   width: 100%;
   margin-bottom: 5.5rem;
   gap: 3.5rem;
-  @media (max-width: 48rem) {
+  @media (max-width: 780px) {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
@@ -69,6 +69,10 @@ const SocialLinkBox = styled.a`
   color: #eeeeef;
   transition: background 0.3s;
 
+  @media (max-width: 780px) {
+    width:12rem
+  }
+
   &:hover {
     background: #333333;
   }
@@ -81,7 +85,7 @@ const SocialLinkBox = styled.a`
     letter-spacing: 0.125rem;
     text-align: left;
     @media (max-width: 48rem) {
-      font-size: 1.25rem;
+      font-size: 1rem;
       line-height: 1.25rem;
       text-align: center;
     }
@@ -254,8 +258,11 @@ const SendButton = styled.button`
 
 const BottomBorder = styled.div`
   width: 100%;
-  border-top: 0.3125rem solid #eeeeff;
+  border-top: 2px solid #eeeeff;
   margin-top: 2rem;
+  @media (max-width: 780px) {
+    margin-top:100px;
+  }
 `;
 
 const HandImage = styled.img`
@@ -263,6 +270,11 @@ const HandImage = styled.img`
   top: -20vh;
   left: -20vw;
   transform: rotate(7.43deg);
+  @media (max-width: 780px) {
+    height:300px;
+    left:-10px;
+    top:20px;
+  }
 `;
 
 const CustomInput = ({ placeholder, type, value, onChange, clearInput }) => (

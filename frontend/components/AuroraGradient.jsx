@@ -7,6 +7,7 @@ const AuroraContainer = styled.div`
   z-index: -2;
   overflow: hidden;
   background: linear-gradient(177.46deg, #000000 -20.55%, #6829d8 297.28%);
+  height:120vh;
 
   div {
     position: absolute;
