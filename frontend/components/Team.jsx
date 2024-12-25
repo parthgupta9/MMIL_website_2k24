@@ -28,6 +28,12 @@ const Title = styled.div`
 const ShapeL = styled.img`
   position: absolute;
   top: -200px;
+
+  @media (max-width: 768px) {
+    transform: scale(0.6);
+    left: -7%;
+    z-index: -1;
+  }
 `;
 
 const ShapeR = styled.img`
@@ -41,6 +47,13 @@ const Cube = styled.img`
   right: 0;
   top: -170px;
   z-index: -1;
+
+  @media (max-width: 768px) {
+    transform: scale(0.6);
+    z-index: -2;
+    top: -330px;
+    right: -60%;
+  }
 `;
 
 const SubTitle = styled.h1`

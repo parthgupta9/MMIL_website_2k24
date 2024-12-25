@@ -144,6 +144,11 @@ const CirclesLeft = styled.div`
   width: 60%;
   left: -27%;
   top: 0;
+
+  @media (max-width: 768px) {
+    z-index: 2;
+  }
+
 `;
 
 const CirclesRight = styled.div`
@@ -151,6 +156,10 @@ const CirclesRight = styled.div`
   width: 60%;
   right: -27%;
   top: 50%;
+
+  @media (max-width: 768px) {
+    z-index: -2;
+  }
 `;
 
 const HRandIcons = styled.div`
@@ -161,6 +170,10 @@ const HRandIcons = styled.div`
   & > img:nth-child(3) {
     position: absolute;
     right: 0;
+  }
+
+  & > img:nth-child(1) {
+    display: none;
   }
 `;
 export const OurEvents = () => {
