@@ -20,20 +20,32 @@ const FooterContainer = styled.footer`
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
+    padding:1rem;
+    gap:0.5rem;
+    }
+`;
+const SectionWrapper = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 2rem; 
+
+@media (max-width: 768px) {
+  flex-direction: row;
+  justify-content: center; 
+  gap: 2.5rem; 
+}
 `;
 
 const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: flex-start; 
-  flex: 1; 
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+align-items: flex-start;
+flex: 1;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    align-items: center;
-  }
+@media (max-width: 768px) {
+  align-items: center;
 `;
 
 const SectionTitle = styled.h3`
@@ -42,9 +54,13 @@ const SectionTitle = styled.h3`
   font-weight: 700;
   line-height: 2.5rem;
   text-align: center;
-
+ white-space: nowrap;
   @media (max-width: 768px) {
     text-align: center;
+    font-size:1rem;
+    line-height:1.5rem;
+    display:flex;
+    font-weight:600;
   }
 `;
 
@@ -52,6 +68,11 @@ const List = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+ 
+  @media (max-width: 768px) {
+    display:flex;
+     gap:1rem;
+  }
 `;
 
 const ListItem = styled.li`
@@ -71,6 +92,9 @@ const ListItem = styled.li`
 
   @media (max-width: 768px) {
     text-align: center;
+    line-height:1.5rem;
+    font-size:1rem;
+    font-weight:200;
   }
 `;
 
@@ -82,10 +106,15 @@ const SocialLinks = styled.div`
     font-size: 2.2rem;
     text-decoration: none;
     color: #efecfd;
+     @media (max-width: 768px) {
+    
+    
+  }
   }
 
   @media (max-width: 768px) {
     justify-content: center;
+
   }
 `;
 
@@ -110,6 +139,9 @@ const Details = styled.div`
   @media (max-width: 768px) {
     text-align: center;
     justify-content: center;
+    font-size:1.1rem;
+    line-height:1.5rem;
+    font-weight:3rem;
   }
 `;
 
@@ -128,7 +160,7 @@ const Footer = () => {
           Technical Society
         </SectionTitle>
       </Section>
-
+      <SectionWrapper>
       <Section>
         <SectionTitle>About us</SectionTitle>
         <List>
@@ -152,7 +184,7 @@ const Footer = () => {
           </ListItem>
         </List>
       </Section>
-
+      </SectionWrapper>
       <Section>
         <SectionTitle>Let's Talk</SectionTitle>
         <SocialLinks>
