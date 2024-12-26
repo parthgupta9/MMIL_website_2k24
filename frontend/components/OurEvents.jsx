@@ -33,9 +33,9 @@ const Title = styled.h1`
 const EventGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 0px;
   row-gap: 4vh;
   justify-content: center;
+  
   @media (max-width:780px){
     grid-template-columns: auto;
   }
@@ -52,12 +52,12 @@ const EventCard = styled.div`
       grid-column: 1;
       grid-row: 1;
       margin: 0 auto;
-      transform: translateX(24vh);
+      transform: translateX(34vh);
       @media (max-width:780px){
         grid-column:1/2;
         grid-row:1/2;
         transform:translateX(0);
-        height:400px;
+        // height:400px;
       }
     `}
   ${({ variant }) =>
@@ -65,7 +65,7 @@ const EventCard = styled.div`
     `
       grid-column: 1;
       grid-row: 2;
-      transform: translateX(24vh);
+      transform: translateX(34vh);
       margin: -4vh auto;
       @media (max-width:780px){
         grid-column:1/2;
@@ -78,7 +78,7 @@ const EventCard = styled.div`
     `
       grid-column: 2;
       grid-row: 1;
-      transform: translateX(-20vh);
+      transform: translateX(-29vh);
       margin: 0 auto;
       @media (max-width:780px){
         grid-column:1/2;
@@ -92,8 +92,8 @@ const EventCard = styled.div`
       grid-column: 2;
       grid-row: 2;
       margin-top: -140px;
-      transform: translateX(-20vh);
-      margin: -39vh auto;
+      transform: translateX(-29vh);
+      margin: -29vh auto;
       @media (max-width:780px){
         grid-column:1/2;
         grid-row:4/5;
@@ -105,7 +105,7 @@ const EventCard = styled.div`
 
 const EventImage = styled.img`
   width:70%;
-  height: 100%
+  // height: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
   object-fit: cover;
