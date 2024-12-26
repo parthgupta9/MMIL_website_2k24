@@ -108,7 +108,7 @@ const ClubCard = styled.div.attrs(({ className }) => ({
 const CardTitle = styled.h2`
   font-size: 2rem;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   z-index: 2;
   word-break: break-word;
@@ -118,6 +118,7 @@ const CardText = styled.p`
   color: white;
   text-align: center;
   font-weight: 100;
+  line-height: 1.5;
   z-index: 2;
 `;
 

@@ -125,7 +125,7 @@ const Footer = () => {
         <SectionTitle style={{ color: "#f6e1fd" }}>
           MMIL is a
           <br />
-          ...
+          Technical Society
         </SectionTitle>
       </Section>
 

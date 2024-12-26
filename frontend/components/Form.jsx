@@ -11,7 +11,7 @@ const Section = styled.div``;
 
 const GetInTouchContainer = styled.section`
   position: relative;
-  width: 60vw;
+  width: 58.5vw;
   max-width: 75rem;
   height: 100vh;
   padding: 2rem;
@@ -46,9 +46,10 @@ const Title = styled.h2`
 const SocialLinksContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 3rem;
   width: 100%;
   margin-bottom: 5.5rem;
-  gap: 3.5rem;
+
   @media (max-width: 780px) {
     flex-direction: column;
     align-items: center;
@@ -352,9 +353,6 @@ const GetInTouch = () => {
       console.log("Form has errors");
     }
   };
-
-  
-  
 
   gsap.registerPlugin(ScrollTrigger);
 
