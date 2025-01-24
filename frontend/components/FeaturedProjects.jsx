@@ -44,10 +44,10 @@ const Banner = styled.div`
 
 const ProjectWrapper = styled.div`
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 30vw;
+  height: 50vh;
   top: 15%;
-  left: calc(50% - 10vh);
+  left: calc(50% - 30vh);
   transform: translate(-50%, -50%) rotateY(0deg);
   transform-style: preserve-3d;
   transform: perspective(2000px);
