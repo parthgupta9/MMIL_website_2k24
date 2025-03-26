@@ -224,7 +224,7 @@ const ExploreButton = styled.button`
 //   margin-top: 200px;
 // `
 
-const Text1 = styled.p`
+const Text1 = styled.ul`
   color: white;
   position: absolute;
   left: 10vw;
@@ -237,7 +237,7 @@ const Text1 = styled.p`
     left:10vw;
   }
 `;
-const Text2 = styled.p`
+const Text2 = styled.ul`
   color: white;
   position: absolute;
   right: 5vw;
@@ -346,16 +346,12 @@ function Clubs() {
           </ClubCard>
         </ClubGrid>
         <Text1>
-          <ul>
             <li>Innovate, Create, Inspire</li>
             <li>Code the Future</li>
-          </ul>
         </Text1>
         <Text2>
-          <ul>
             <li>Crafting the Next Generation of Mobile Solutions</li>
             <li>Building Dynamic and Engaging Web Experiences</li>
-          </ul>
         </Text2>
       </Container>
     </Section>
