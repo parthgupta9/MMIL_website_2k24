@@ -34,6 +34,7 @@ const EventGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 4vh;
+  column-gap: 10vh;
   justify-content: center;
   
   @media (max-width:780px){
@@ -53,6 +54,15 @@ const EventCard = styled.div`
       grid-row: 1;
       margin: 0 auto;
       transform: translateX(34vh);
+      @media (max-width:1300px){
+        transform:translateX(20vh)
+      };
+      @media (max-width:1100px){
+        transform:translateX(15vh)
+      };
+      @media (max-width:950px){
+        transform:translateX(10vh)
+      };
       @media (max-width:780px){
         grid-column:1/2;
         grid-row:1/2;
@@ -67,6 +77,15 @@ const EventCard = styled.div`
       grid-row: 2;
       transform: translateX(34vh);
       margin: -4vh auto;
+      @media (max-width:1300px){
+        transform:translateX(20vh)
+      };
+      @media (max-width:1100px){
+        transform:translateX(15vh)
+      };
+      @media (max-width:950px){
+        transform:translateX(10vh)
+      };
       @media (max-width:780px){
         grid-column:1/2;
         grid-row:2/3;
@@ -80,6 +99,15 @@ const EventCard = styled.div`
       grid-row: 1;
       transform: translateX(-29vh);
       margin: 0 auto;
+      @media (max-width:1300px){
+        transform:translateX(-20vh)
+      };
+        @media (max-width:1100px){
+        transform:translateX(-15vh)
+      };
+      @media (max-width:950px){
+        transform:translateX(-10vh)
+      };
       @media (max-width:780px){
         grid-column:1/2;
         grid-row:3/4;
@@ -94,6 +122,15 @@ const EventCard = styled.div`
       margin-top: -140px;
       transform: translateX(-29vh);
       margin: -29vh auto;
+      @media (max-width:1300px){
+        transform:translateX(-20vh)
+      };
+      @media (max-width:1100px){
+        transform:translateX(-15vh)
+      };
+      @media (max-width:950px){
+        transform:translateX(-10vh)
+      };
       @media (max-width:780px){
         grid-column:1/2;
         grid-row:4/5;

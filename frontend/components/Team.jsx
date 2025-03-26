@@ -868,13 +868,6 @@ function Team() {
                 }}
               />
               <Mem
-                src="/male.jpg"
-                id="abhishekKushwaha"
-                onClick={(e) => {
-                  toggleMemInfo(e);
-                }}
-              />
-              <Mem
                 src="/female.jpg"
                 id="shubhiGupta"
                 onClick={(e) => {
@@ -1032,16 +1025,6 @@ function Team() {
           )}
           {showMoreWeb && (
             <>
-              {/* <Mem src="/photo.jpg" />
-              <Mem src="/IMG_20240526_193046.jpg" />
-              <Mem src="/IMG_20241123_154657.jpg" className="top" />
-              <Mem src="/Muskan.jpg" />
-              <Mem src="/Disha.jpeg"  className="top"/>
-              
-              <Mem src="/garima.jpeg" />
-              <Mem src="/parthc.jpg"  />
-              <Mem src="/female.jpg" />
-            <Mem src="/female.jpg" /> */}
               <Mem
                 src="/IMG_20240526_193046.jpg"
                 id="parthGupta"
@@ -1082,13 +1065,6 @@ function Team() {
               <Mem
                 src="/hero.jpg"
                 id="kuldeepPandit"
-                onClick={(e) => {
-                  toggleMemInfo(e);
-                }}
-              />
-              <Mem
-                src="/female.jpg"
-                id="harshitaSharma"
                 onClick={(e) => {
                   toggleMemInfo(e);
                 }}
@@ -1166,13 +1142,6 @@ function Team() {
               <Mem
                 src="/Ashita.jpg"
                 id="ashitaMaheshwari"
-                onClick={(e) => {
-                  toggleMemInfo(e);
-                }}
-              />
-              <Mem
-                src="/ayan.jpg"
-                id="ayanKhan"
                 onClick={(e) => {
                   toggleMemInfo(e);
                 }}
