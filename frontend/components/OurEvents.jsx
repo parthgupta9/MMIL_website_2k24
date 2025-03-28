@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Hr from "../src/assets/hr5.svg";
 import ellipse from "../src/assets/Ellipse 60.svg";
 import hr5icon from "../src/assets/hr5icon.svg";
-import leftCircle from "../public/Frame 427318247.png";
+import leftCircle from "../public/Frame 427318228.svg";
 
 const OurEventsContainer = styled.section`
   position: relative;
@@ -152,7 +152,7 @@ const EventImage = styled.img`
 const CirclesLeft = styled.div`
   position: absolute;
   width: 60%;
-  left: -27%;
+  left: -26%;
   top: 0;
 
   img {
