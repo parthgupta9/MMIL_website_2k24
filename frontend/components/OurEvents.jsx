@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Hr from "../src/assets/hr5.svg";
 import ellipse from "../src/assets/Ellipse 60.svg";
 import hr5icon from "../src/assets/hr5icon.svg";
+import leftCircle from "../public/Frame 427318247.png";
 
 const OurEventsContainer = styled.section`
   position: relative;
@@ -14,7 +15,7 @@ const OurEventsContainer = styled.section`
   color: white;
   padding: 40px;
   width: 100%;
-  margin-top:-50px;
+  margin-top: -50px;
 `;
 
 const Title = styled.h1`
@@ -24,9 +25,9 @@ const Title = styled.h1`
   text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
   margin-bottom: 40px;
   margin-top: 200px;
-  @media (max-width:780px){
-    font-size:2rem;
-    margin-top:90px;
+  @media (max-width: 780px) {
+    font-size: 2rem;
+    margin-top: 90px;
   }
 `;
 
@@ -36,8 +37,8 @@ const EventGrid = styled.div`
   row-gap: 4vh;
   column-gap: 10vh;
   justify-content: center;
-  
-  @media (max-width:780px){
+
+  @media (max-width: 780px) {
     grid-template-columns: auto;
   }
 `;
@@ -141,12 +142,11 @@ const EventCard = styled.div`
 `;
 
 const EventImage = styled.img`
-  width:70%;
+  width: 70%;
   // height: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
   object-fit: cover;
-  
 `;
 
 const CirclesLeft = styled.div`
@@ -155,9 +155,9 @@ const CirclesLeft = styled.div`
   left: -27%;
   top: 0;
 
-  img{
-    @media (max-width:780px){
-      height:150px; 
+  img {
+    @media (max-width: 780px) {
+      height: 150px;
     }
   }
 `;
@@ -168,9 +168,9 @@ const CirclesRight = styled.div`
   right: -27%;
   top: 50%;
 
-  img{
-    @media (max-width:780px){
-      height:150px; 
+  img {
+    @media (max-width: 780px) {
+      height: 150px;
     }
   }
 `;
@@ -183,23 +183,22 @@ const HRandIcons = styled.div`
   & > img:nth-child(3) {
     position: absolute;
     right: 0;
-    @media (max-width:780px){
-      height:120px;
+    @media (max-width: 780px) {
+      height: 120px;
     }
   }
 
   & > img:nth-child(2) {
-    @media (max-width:780px){
-     height:100px;
+    @media (max-width: 780px) {
+      height: 100px;
     }
   }
 
   & > img:nth-child(1) {
-    @media (max-width:780px){
-      width:60vw;
+    @media (max-width: 780px) {
+      width: 60vw;
     }
   }
-
 `;
 export const OurEvents = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -284,7 +283,7 @@ export const OurEvents = () => {
   return (
     <OurEventsContainer className="events-container">
       <CirclesLeft className="circlesLeft">
-        <img src="public/Frame 427318247.png" className="circle-left-image" />
+        <img src={leftCircle} className="circle-left-image" />
       </CirclesLeft>
       <HRandIcons className="hrIcons">
         <img src={Hr} alt="" />
@@ -314,10 +313,7 @@ export const OurEvents = () => {
           </a>
         </EventCard>
         <CirclesRight className="circlesRight">
-          <img
-            src="/Frame 427318248.png"
-            className="circle-right-image"
-          />
+          <img src="/Frame 427318248.png" className="circle-right-image" />
         </CirclesRight>
       </EventGrid>
     </OurEventsContainer>
