@@ -112,6 +112,10 @@ const CardTitle = styled.h2`
   text-align: center;
   z-index: 2;
   word-break: break-word;
+
+  @media (max-width:480px){
+    font-size: 1.5rem;
+  }
 `;
 
 const CardText = styled.p`
